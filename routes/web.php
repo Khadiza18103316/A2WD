@@ -33,6 +33,10 @@ Route::get('/', function () {
 Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
 // Home
-Route::get ('/index',[HomeController::class,'index'])->name('admin.index');
-Route::get ('/create',[HomeController::class,'create'])->name('admin.create');
-Route::post ('/store',[HomeController::class,'store'])->name('admin.store');
+Route::get ('/admin/index',[HomeController::class,'index'])->name('admin.index');
+Route::get ('/admin/create',[HomeController::class,'create'])->name('admin.create');
+Route::post('/admin/store',[HomeController::class,'store'])->name('admin.store');
+Route::get ('/admin/details/{id}',[HomeController::class,'details'])->name('admin.details');
+Route::get ('/admin/edit/{id}',[HomeController::class,'edit'])->name('admin.edit');
+Route::put ('/admin/update/{id}',[HomeController::class,'update'])->name('admin.update');
+Route::get ('/admin/delete/{id}',[HomeController::class,'delete'])->name('admin.delete');

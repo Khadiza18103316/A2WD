@@ -32,18 +32,12 @@
                 <tr>
                     <th>{{ $key + 1 }}</th>
                     <td>{{ $home->name }}</td>
-                    {{-- <td><img src="{{ url('/uploads/' .$home->image)}}" width="80px"></td> --}}
                     <td><img src="{{ Storage::url($home->image)}}" width="80"></td>
-
-                    {{-- <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('admin.home.details', $home->id) }}"><i
-                                class="fas fa-eye"></i></a>
-                        <a class="btn btn-info btn-sm" href="{{ route('admin.home.edit', $home->id) }}"><i
-                                class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{ route('admin.bus.delete', $bus->id) }}"><i
-                                class="fas fa-trash-alt"></i></a>
-                    </td> --}}
-
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.details', $home->id) }}">Details</i></a>
+                        <a class="btn btn-info btn-sm" href="{{ route('admin.edit', $home->id) }}">Edit</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('admin.delete', $home->id) }}">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
