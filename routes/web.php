@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 // Backend
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
@@ -17,9 +18,9 @@ use App\Http\Controllers\Backend\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('frontend.index');
-// });
+Route::get('/', function () {
+    return view('frontend.index');
+});
 
 // Admin Start
 Route::group(['prefix'=>'admin'],function(){
@@ -33,3 +34,5 @@ Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.
 
 // Home
 Route::get ('/index',[HomeController::class,'index'])->name('admin.index');
+Route::get ('/create',[HomeController::class,'create'])->name('admin.create');
+Route::get ('/store',[HomeController::class,'store'])->name('admin.store');

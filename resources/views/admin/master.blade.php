@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{url('backend/assets/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{url('backend/assets/css/app.css')}}">
     <link rel="shortcut icon" href="{{url('backend/assets/images/favicon.svg')}}" type="image/x-icon">
+
 </head>
 
 <body>
