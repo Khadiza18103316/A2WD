@@ -18,21 +18,15 @@ class HomeController extends Controller
     }
 
     public function store(Request $request){
-        $filename = "";
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $filename = date('Ymdhms').'.'.$file->getclientOriginalExtension();
-            $file->storeAs('/uploads', $filename);
-        }
-
         $request->validate([
             'name'=>'required',
+            'image'=>'required',
         ]);
-
+        $path = $request->image->store('public/image');
         Home::create([
             // field name for DB || field name for form
             'name' =>$request->name,
-            'image' =>$filename
+            'image' =>$path,
         ]);
         return redirect()->route('admin.index')->with('success', 'Created Successfully!');
 

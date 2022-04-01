@@ -32,7 +32,9 @@
                 <tr>
                     <th>{{ $key + 1 }}</th>
                     <td>{{ $home->name }}</td>
-                    <td><img src="{{ url('/uploads/' . $home->image) }}" height="120"></td>
+                    {{-- <td><img src="{{ url('/uploads/' .$home->image)}}" width="80px"></td> --}}
+                    <td><img src="{{ Storage::url($home->image)}}" width="80"></td>
+
                     {{-- <td>
                         <a class="btn btn-primary btn-sm" href="{{ route('admin.home.details', $home->id) }}"><i
                                 class="fas fa-eye"></i></a>
