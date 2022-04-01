@@ -28,27 +28,24 @@
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($buses as $key => $bus)
+            @foreach ($homes as $key => $home)
                 <tr>
                     <th>{{ $key + 1 }}</th>
-                    <td>{{ $bus->bus_name }}</td>
-                    <td><img src="{{ url('/uploads/' . $bus->image) }}" height="120"></td>
-                    <td>{{ $bus->bus_no }}</td>
-                    <td>{{ $bus->bus_type }}</td>
-
-                    <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('admin.bus.details', $bus->id) }}"><i
+                    <td>{{ $home->name }}</td>
+                    <td><img src="{{ url('/uploads/' . $home->image) }}" height="120"></td>
+                    {{-- <td>
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.home.details', $home->id) }}"><i
                                 class="fas fa-eye"></i></a>
-                        <a class="btn btn-info btn-sm" href="{{ route('admin.bus.edit', $bus->id) }}"><i
+                        <a class="btn btn-info btn-sm" href="{{ route('admin.home.edit', $home->id) }}"><i
                                 class="fas fa-edit"></i></a>
                         <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')" href="{{ route('admin.bus.delete', $bus->id) }}"><i
                                 class="fas fa-trash-alt"></i></a>
-                    </td>
+                    </td> --}}
 
                 </tr>
-            @endforeach --}}
+            @endforeach
         </tbody>
     </table>
-    {{-- {{ $buses->links() }} --}}
+    {{ $homes->links() }}
 
 @endsection

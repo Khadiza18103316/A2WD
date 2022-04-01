@@ -35,4 +35,4 @@ Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.
 // Home
 Route::get ('/index',[HomeController::class,'index'])->name('admin.index');
 Route::get ('/create',[HomeController::class,'create'])->name('admin.create');
-Route::get ('/store',[HomeController::class,'store'])->name('admin.store');
+Route::post ('/store',[HomeController::class,'store'])->name('admin.store');
