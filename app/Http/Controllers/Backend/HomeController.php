@@ -23,13 +23,14 @@ class HomeController extends Controller
             'name'=>'required',
             'image'=>'required',
         ]);
+        
         $path = $request->image->store('public/home');
         Home::create([
             // field name for DB || field name for form
             'name' =>$request->name,
             'image' =>$path,
         ]);
-        return redirect()->route('admin.index')->with('success', 'Created Successfully!');
+        return redirect()->route('home.index')->with('success', 'Created Successfully!');
     }
 
     public function details($id)
@@ -66,13 +67,13 @@ class HomeController extends Controller
                 'name' =>$request->name,
                 'image' =>$path,
             ]);
-            return redirect()->route('admin.index')->with('message', 'Updated Successfully!');
+            return redirect()->route('home.index')->with('message', 'Updated Successfully!');
         }
     }
 
     public function delete($id)
     {
       Home::find($id)->delete();
-      return redirect()->route('admin.index')->with('msg','Deleted.');
+      return redirect()->route('home.index')->with('msg','Deleted.');
     }
 }

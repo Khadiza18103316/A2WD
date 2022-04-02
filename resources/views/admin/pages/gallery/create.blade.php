@@ -20,8 +20,8 @@
             </div>
             <div class="card-body">
 
-                {{-- <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf --}}
+                <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
@@ -59,7 +59,7 @@
                         </span>
                         <span class="text">Cancel</span>
                     </a>
-                {{-- </form> --}}
+                </form>
             </div>
         </div>
     </div>
