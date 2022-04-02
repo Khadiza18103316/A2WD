@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-12">
-    <h3 class="mb-4">Edit Gallery Image</h3>
+    <h3 class="mb-4">Add Teammates</h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
@@ -16,26 +16,32 @@
     <div class="col-12">
         <div class="card shadow position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Gallery Image Informations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Teammates Informations</h6>
             </div>
             <div class="card-body">
 
-                <form action="{{ route('gallery.update', $gallery->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('put')
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label"> Image Name</label>
-                                <input value="{{ $gallery->name }}" required name="name" type="text" placeholder="Name" class="form-control">
+                                <label for="exampleInputEmail1" class="form-label">Name</label>
+                                <input required name="name" type="text" placeholder="Name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Id</label>
+                                <input required name="member_id" type="number" placeholder="Id" class="form-control">
 
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Image Category</label>
-                                <input value="{{ $gallery->category }}" required name="category" type="text" placeholder="Category" class="form-control">
+                                <label for="exampleInputEmail1" class="form-label">Designation</label>
+                                <input required name="designation" type="text" placeholder="Designation" class="form-control">
 
                             </div>
                         </div>
@@ -45,7 +51,6 @@
                                 <img id="output" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
                                 <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
-                                <img src="{{ Storage::url($gallery->image)}}" width="80">
                             </div>
                         </div>
                     </div>
@@ -55,7 +60,7 @@
                         </span>
                         <span class="text">Submit</span>
                     </button>
-                    <a href="{{ route('gallery.index') }}" class="btn btn-danger btn-icon-split">
+                    <a href="{{ route('team.index') }}" class="btn btn-danger btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>

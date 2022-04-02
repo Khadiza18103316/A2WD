@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\TeammatesController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 
@@ -24,6 +25,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 // Frontend Start
 Route::get('/',[FrontendController::class,'slides'])->name('frontend.slides');
 Route::get('/about',[FrontendController::class,'about'])->name('frontend.about');
+Route::get('/gallery',[FrontendController::class,'gallery'])->name('frontend.gallery');
+
 
 // Admin Start
 Route::group(['prefix'=>'admin'],function(){
@@ -52,3 +55,12 @@ Route::get ('/gallery/details/{id}',[GalleryController::class,'details'])->name(
 Route::get ('/gallery/edit/{id}',[GalleryController::class,'edit'])->name('gallery.edit');
 Route::put ('/gallery/update/{id}',[GalleryController::class,'update'])->name('gallery.update');
 Route::get ('/gallery/delete/{id}',[GalleryController::class,'delete'])->name('gallery.delete');
+
+// Teammates
+Route::get ('/team/index',[TeammatesController::class,'index'])->name('team.index');
+Route::get ('/team/create',[TeammatesController::class,'create'])->name('team.create');
+Route::post('/team/store',[TeammatesController::class,'store'])->name('team.store');
+Route::get ('/team/details/{id}',[TeammatesController::class,'details'])->name('team.details');
+Route::get ('/team/edit/{id}',[TeammatesController::class,'edit'])->name('team.edit');
+Route::put ('/team/update/{id}',[TeammatesController::class,'update'])->name('team.update');
+Route::get ('/team/delete/{id}',[TeammatesController::class,'delete'])->name('team.delete');

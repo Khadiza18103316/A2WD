@@ -35,11 +35,11 @@
                     <td>{{ $gallery->name }}</td>
                     <td>{{ $gallery->category }}</td>
                     <td><img src="{{ Storage::url($gallery->image)}}" width="80"></td>
-                    {{-- <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('admin.details', $gallery->id) }}">Details</i></a>
-                        <a class="btn btn-info btn-sm" href="{{ route('admin.edit', $gallery->id) }}">Edit</a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('admin.delete', $gallery->id) }}">Delete</a>
-                    </td> --}}
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{{ route('gallery.details', $gallery->id) }}">Details</i></a>
+                        <a class="btn btn-info btn-sm" href="{{ route('gallery.edit', $gallery->id) }}">Edit</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('gallery.delete', $gallery->id) }}">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

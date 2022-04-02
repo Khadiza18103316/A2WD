@@ -1,12 +1,15 @@
 @extends('frontend.index')
 @section( 'content')
-<!-- About Section -->
+
+<!-- team mates section start here -->
+
 <section class="py-5 my-5">
    <div class="container">
       <div class="col-lg-12 text-center my-2 py-2">
          <h3 class="m-0">About Us</h3>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
       </div>
+
 
 <div class="row">
    <div class="col-md-4">

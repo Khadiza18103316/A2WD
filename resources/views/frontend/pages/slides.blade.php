@@ -2,6 +2,7 @@
 @section( 'content')
 
     <!-- Slides -->
+
     <div class="slider" id="slider1">
     @foreach ($homes as $home)
     <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
@@ -20,5 +21,4 @@
         <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
     </span>
    </div>
-   
 @endsection

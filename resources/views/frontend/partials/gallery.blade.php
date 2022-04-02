@@ -69,6 +69,6 @@
 		</div>
 	</div>
 <div>
-	<p class="text-muted text-end moveTo"><a href="./pages/gallery.html">See more</a></p>
+	<p class="text-muted text-end moveTo"><a href="{{route('frontend.gallery')}}">See more</a></p>
 </div>
 </div>
