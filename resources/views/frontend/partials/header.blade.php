@@ -1,7 +1,7 @@
 <!-- navbar start here -->
 <nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="{{route('frontend.slides')}}">
+        <a class="navbar-brand" href="{{route('frontend.home')}}">
             <img src="{{url('frontend/./assets/img/logo.png')}}" alt="" class="logo" />
          Digital
         </a>
@@ -17,10 +17,10 @@
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto mr-md-3 text-center">
-            <li class="nav-item active"><a href="{{route('frontend.slides')}}" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="{{route('frontend.home')}}" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="{{route('frontend.about')}}" class="nav-link">About</a></li>
             <li class="nav-item"><a href="{{route('frontend.gallery')}}" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="./pages/teammates.html" class="nav-link">Team mates</a></li>
+            <li class="nav-item"><a href="{{route('frontend.team')}}" class="nav-link">Team mates</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </div>

@@ -13,15 +13,11 @@
 	<link rel="stylesheet" href="{{url('frontend/./assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/./assets/css/slider.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/./assets/css/gallery.css')}}">
-
 	</head>
 	<body>
 
-	@yield('content')
 	@include('frontend.partials.header')
-	@include('frontend.partials.gallery')
-	@include('frontend.partials.teammates')
-	@include('frontend.partials.contact')
+	@yield('content')
 	@include('frontend.partials.footer')
 
 {{--  JS --}}

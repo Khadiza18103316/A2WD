@@ -10,10 +10,10 @@
         <div class="col-lg-3 col-xs-12 links pb-4">
           <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>
             <ul class="m-0 p-0">
-              <li>- <a href="#">Home</a></li>
-              <li>- <a href="./pages/about.html">About</a></li>
-              <li>- <a href="./pages/gallery.html">Gallery</a></li>
-              <li>- <a href="./pages/teammates.html">Team mates</a></li>
+              <li>- <a href="{{route('frontend.home')}}">Home</a></li>
+              <li>- <a href="{{route('frontend.about')}}">About</a></li>
+              <li>- <a href="{{route('frontend.gallery')}}">Gallery</a></li>
+              <li>- <a href="{{route('frontend.team')}}">Team mates</a></li>
               <li>- <a href="#contact">Contact</a></li>
             </ul>
         </div>

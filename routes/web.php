@@ -8,24 +8,16 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\TeammatesController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Frontend Start
-Route::get('/',[FrontendController::class,'slides'])->name('frontend.slides');
-Route::get('/about',[FrontendController::class,'about'])->name('frontend.about');
+Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
 Route::get('/gallery',[FrontendController::class,'gallery'])->name('frontend.gallery');
+Route::get('/team',[FrontendController::class,'team'])->name('frontend.team');
+Route::get('/about',[FrontendController::class,'about'])->name('frontend.about');
 
 
 // Admin Start
@@ -38,10 +30,14 @@ Route::get('/', function () {
 // Dashboard
 Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
 
+// Contact
+Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
+
+
 // Home
 Route::get ('/home/index',[HomeController::class,'index'])->name('home.index');
 Route::get ('/home/create',[HomeController::class,'create'])->name('home.create');
-Route::post('/home/store',[HomeController::class,'store'])->name('ahome.store');
+Route::post('/home/store',[HomeController::class,'store'])->name('home.store');
 Route::get ('/home/details/{id}',[HomeController::class,'details'])->name('home.details');
 Route::get ('/home/edit/{id}',[HomeController::class,'edit'])->name('home.edit');
 Route::put ('/home/update/{id}',[HomeController::class,'update'])->name('home.update');

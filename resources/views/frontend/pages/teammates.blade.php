@@ -8,10 +8,10 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<link rel="stylesheet" href="../assets/css/style.css">
-	<link rel="stylesheet" href="../assets/css/slider.css">
-	<link rel="stylesheet" href="../assets/css/gallery.css">
+	<link rel="stylesheet" href="{{url('frontend/./assets/css/main.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/./assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/./assets/css/slider.css')}}">
+	<link rel="stylesheet" href="{{url('frontend/./assets/css/gallery.css')}}">
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -21,8 +21,8 @@
       <!-- navbar start here -->
 			<nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
 		    <div class="container">
-		    	<a class="navbar-brand" href="../index.html">
-               <img src="../assets/img/logo.png" alt="" class="logo" />
+		    	<a class="navbar-brand" href="{{route('frontend.home')}}">
+               <img src="{{url('frontend/./assets/img/logo.png')}}" alt="" class="logo" />
                Digital
             </a>
 		    	<div class="social-media order-lg-last">
@@ -37,11 +37,11 @@
 		      </button>
 		      <div class="collapse navbar-collapse" id="ftco-nav">
 		        <ul class="navbar-nav ml-auto mr-md-3 text-center">
-		        	<li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-		        	<li class="nav-item"><a href="./about.html" class="nav-link">About</a></li>
-		        	<li class="nav-item"><a href="./gallery.html" class="nav-link">Gallery</a></li>
-		        	<li class="nav-item active"><a href="#" class="nav-link">Team mates</a></li>
-		          <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+		        	<li class="nav-item"><a href="{{route('frontend.home')}}" class="nav-link">Home</a></li>
+		        	<li class="nav-item"><a href="{{route('frontend.about')}}" class="nav-link">About</a></li>
+		        	<li class="nav-item"><a href="{{route('frontend.gallery')}}" class="nav-link">Gallery</a></li>
+		        	<li class="nav-item active"><a href="{{route('frontend.team')}}" class="nav-link">Team mates</a></li>
+		          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 		        </ul>
 		      </div>
 		    </div>
@@ -68,19 +68,22 @@
 </form>
 </div>
 
+           @foreach ($teams as $team)
             <div class="teammates d-flex flex-column gap-4 teammates">
                <div class="card">
                   <div class="row">
                      <div class="col-md-3">
                         <div class="w-100 h-100">
-                           <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="" class="img-fluid fitImg" />
+                           {{-- @foreach ($teams as $team) --}}
+                           <img src="{{ Storage::url($team->image)}}" alt="" class="img-fluid fitImg" />
+                           {{-- @endforeach --}}
                         </div>
                      </div>
                      <div class="col-md-9">
                         <div class="card-body">
-                           <h4 class="card-title">Jhone doe</h4>
-                           <p class="m-0 text-muted">ID : 45454</p>
-                           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                           <h4 class="card-title">{{ $team->name }}</h4>
+                           <p class="m-0 text-muted">ID : {{ $team->member_id }}</p>
+                           <p class="card-text">{{ $team->designation }}</p>
                           <span class="social-media-profile">
                               <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
                               <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -90,91 +93,8 @@
                      </div>
                   </div>
                </div>
-               <div class="card">
-                  <div class="row">
-                     <div class="col-md-3">
-                        <div class="w-100 h-100">
-                           <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="" class="img-fluid fitImg" />
-                        </div>
-                     </div>
-                     <div class="col-md-9">
-                        <div class="card-body">
-                           <h4 class="card-title">Jhone doe</h4>
-                           <p class="m-0 text-muted">ID : 45454</p>
-                           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                           <span class="social-media-profile">
-                              <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-                              <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="card">
-                  <div class="row">
-                     <div class="col-md-3">
-                        <div class="w-100 h-100">
-                           <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="" class="img-fluid fitImg" />
-                        </div>
-                     </div>
-                     <div class="col-md-9">
-                        <div class="card-body">
-                           <h4 class="card-title">Jhone doe</h4>
-                           <p class="m-0 text-muted">ID : 45454</p>
-                           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                           <span class="social-media-profile">
-                              <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-                              <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="card">
-                  <div class="row">
-                     <div class="col-md-3">
-                        <div class="w-100 h-100">
-                           <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="" class="img-fluid fitImg" />
-                        </div>
-                     </div>
-                     <div class="col-md-9">
-                        <div class="card-body">
-                           <h4 class="card-title">Jhone doe</h4>
-                           <p class="m-0 text-muted">ID : 45454</p>
-                           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                           <span class="social-media-profile">
-                              <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-                              <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="card">
-                  <div class="row">
-                     <div class="col-md-3">
-                        <div class="w-100 h-100">
-                           <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg" alt="" class="img-fluid fitImg" />
-                        </div>
-                     </div>
-                     <div class="col-md-9">
-                        <div class="card-body">
-                           <h4 class="card-title">Jhone doe</h4>
-                           <p class="m-0 text-muted">ID : 45454</p>
-                           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <span class="social-media-profile">
-                              <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-                              <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
             </div>
+            @endforeach
          </div>
       </div>
    </div>
@@ -196,11 +116,11 @@
     <div class="col-lg-3 col-xs-12 links pb-4">
       <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>
         <ul class="m-0 p-0">
-          <li>- <a href="../index.html">Home</a></li>
-          <li>- <a href="./about.html">About</a></li>
-          <li>- <a href="#">Gallery</a></li>
-          <li>- <a href="./teammates.html">Team mates</a></li>
-          <li>- <a href="../index.html#contact">Contact</a></li>
+          <li>- <a href="{{route('frontend.home')}}">Home</a></li>
+          <li>- <a href="{{route('frontend.about')}}">About</a></li>
+          <li>- <a href="{{route('frontend.gallery')}}">Gallery</a></li>
+          <li>- <a href="{{route('frontend.team')}}">Team mates</a></li>
+          <li>- <a href="#contact">Contact</a></li>
         </ul>
     </div>
     <div class="col-lg-4 col-xs-12 location pb-4 ">
@@ -218,15 +138,10 @@
 </div>
 </div>
 
-
-
-
-
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/popper.js"></script>
-  <script src="../assets/js/bootstrap.min.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/slider.js"></script>
-
-	</body>
+  <script src="{{url('frontend/./assets/js/jquery.min.js')}}"></script>
+  <script src="{{url('frontend/./assets/js/popper.js')}}"></script>
+  <script src="{{url('frontend/./assets/js/bootstrap.min.js')}}"></script>
+  <script src="{{url('frontend/./assets/js/main.js')}}"></script>
+  <script src="{{url('frontend/./assets/js/slider.js')}}"></script>
+  </body>
 </html>

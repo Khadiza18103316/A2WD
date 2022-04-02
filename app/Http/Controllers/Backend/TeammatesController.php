@@ -27,7 +27,7 @@ class TeammatesController extends Controller
         ]);
         
         $path = $request->image->store('public/team');
-        team::create([
+        Team::create([
             // field name for DB || field name for form
             'name' =>$request->name,
             'member_id' =>$request->member_id,
