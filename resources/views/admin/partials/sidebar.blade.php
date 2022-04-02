@@ -13,25 +13,16 @@
 
 
                 <li class="sidebar-item  ">
-                    <a href="{{route('admin.index')}}" class='sidebar-link'>
+                    <a href="{{route('home.index')}}" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Home</span>
                     </a>
                 </li>
 
                 <li class="sidebar-item  ">
-                    <a href="table-datatable.html" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                        <span>Datatable</span>
-                    </a>
-                </li>
-
-               
-
-                <li class="sidebar-item  ">
-                    <a href="ui-file-uploader.html" class='sidebar-link'>
+                    <a href="{{route('gallery.index')}}" class='sidebar-link'>
                         <i class="bi bi-cloud-arrow-up-fill"></i>
-                        <span>File Uploader</span>
+                        <span>Gallery</span>
                     </a>
                 </li>
 

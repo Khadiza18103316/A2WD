@@ -17,8 +17,11 @@
 	</head>
 	<body>
 
-	@include('frontend.partials.header')
 	@yield('content')
+	@include('frontend.partials.header')
+	@include('frontend.partials.gallery')
+	@include('frontend.partials.teammates')
+	@include('frontend.partials.contact')
 	@include('frontend.partials.footer')
 
 {{--  JS --}}

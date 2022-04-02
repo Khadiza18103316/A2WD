@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 
-    <h3 class="mb-4">Home</h3>
+    <h3 class="mb-4">Gallery</h3>
 
     @if(session()->has('msg'))
     <p class="alert alert-danger">{{session()->get('msg')}}</p>
@@ -15,7 +15,7 @@
     <p class="alert alert-message">{{session()->get('message')}}</p>
 @endif 
 
-    <a href="{{ route('home.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add Home</a>
+    <a href="{{ route('gallery.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add Gallery</a>
     <br>
     <br>
     <table class="table table-striped table-bordered table-hover">
@@ -28,20 +28,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($homes as $key => $home)
+            {{-- @foreach ($gallerys as $key => $gallery)
                 <tr>
                     <th>{{ $key + 1 }}</th>
-                    <td>{{ $home->name }}</td>
-                    <td><img src="{{ Storage::url($home->image)}}" width="80"></td>
+                    <td>{{ $gallery->name }}</td>
+                    <td><img src="{{ Storage::url($gallery->image)}}" width="80"></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('home.details', $home->id) }}">Details</i></a>
-                        <a class="btn btn-info btn-sm" href="{{ route('home.edit', $home->id) }}">Edit</a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('home.delete', $home->id) }}">Delete</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.details', $gallery->id) }}">Details</i></a>
+                        <a class="btn btn-info btn-sm" href="{{ route('admin.edit', $gallery->id) }}">Edit</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('admin.delete', $gallery->id) }}">Delete</a>
                     </td>
                 </tr>
-            @endforeach
+            @endforeach --}}
         </tbody>
     </table>
-    {{ $homes->links() }}
+    {{-- {{ $homes->links() }} --}}
 
 @endsection

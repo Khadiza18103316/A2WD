@@ -1,6 +1,3 @@
-@extends('frontend.index')
-@section( 'content')
-
 <!-- team section start here -->
 <div class="container py-5">
 	<div class="container-info text-center pb-4">
@@ -91,5 +88,4 @@
 	</div>
 
 </div>
-@endsection
 

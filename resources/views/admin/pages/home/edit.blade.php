@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-12">
-    <h3 class="mb-4">Add Image</h3>
+    <h3 class="mb-4">Update Image</h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
@@ -16,11 +16,11 @@
     <div class="col-12">
         <div class="card shadow position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Image Informations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Home Image Informations</h6>
             </div>
             <div class="card-body">
 
-                <form action="{{ route('admin.update', $home->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('home.update', $home->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="row">
@@ -47,7 +47,7 @@
                         </span>
                         <span class="text">Submit</span>
                     </button>
-                    <a href="{{ route('admin.index') }}" class="btn btn-danger btn-icon-split">
+                    <a href="{{ route('home.index') }}" class="btn btn-danger btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>

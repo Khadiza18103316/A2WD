@@ -1,5 +1,4 @@
 <!-- footer start here -->
-
 <div class="mt-5 pt-5 pb-2 footer">
     <div class="container">
       <div class="row">

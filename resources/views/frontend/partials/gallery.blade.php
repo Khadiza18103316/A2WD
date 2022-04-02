@@ -1,6 +1,3 @@
-@extends('frontend.index')
-@section( 'content')
-
 <!-- gallery start here -->
 <div class="container py-5">
 	<div class="row">
@@ -74,7 +71,4 @@
 <div>
 	<p class="text-muted text-end moveTo"><a href="./pages/gallery.html">See more</a></p>
 </div>
-
-
 </div>
-@endsection

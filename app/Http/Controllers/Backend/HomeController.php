@@ -12,7 +12,7 @@ class HomeController extends Controller
         $homes =Home::paginate(5);
         return view ('admin.pages.home.index',compact('homes'));
     }
-
+    
     public function create(){
         return view ('admin.pages.home.create');
     }

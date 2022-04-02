@@ -1,8 +1,4 @@
-@extends('frontend.index')
-@section( 'content')
-
 <!-- contact start here -->
-
 <div class="contact" id="contact">
     <div class="container py-5">
       <div class="container-info text-center pb-4">
@@ -56,6 +52,4 @@
           </form>
         </div>
       </div>
-
     </div>
-    @endsection
