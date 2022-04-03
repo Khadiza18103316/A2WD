@@ -38,4 +38,15 @@ class FrontendController extends Controller
         return view('frontend.pages.about');
     
     }
-}
+
+      // Search Method
+        public function search(){
+
+            $key=request()->search;
+            $teams = Team::where('name','LIKE','%'.$key.'%')
+            ->orWhere('member_id','LIKE','%'.$key.'%')
+            ->orWhere('designation','LIKE','%'.$key.'%')->get();
+            return view('frontend.pages.search',compact('teams','key'));
+        }
+      
+    }

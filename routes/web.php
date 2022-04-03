@@ -19,6 +19,9 @@ Route::get('/gallery',[FrontendController::class,'gallery'])->name('frontend.gal
 Route::get('/team',[FrontendController::class,'team'])->name('frontend.team');
 Route::get('/about',[FrontendController::class,'about'])->name('frontend.about');
 
+//Search
+Route::get ('/search',[FrontendController::class,'search'])->name('search');
+
 
 // Admin Start
 Route::group(['prefix'=>'admin'],function(){

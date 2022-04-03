@@ -62,7 +62,7 @@
          <div class="container">
 
 <div class="searchContainer">
-  <form action="#" class="p-5 text-end">
+  <form action="{{route('search')}}" method="GET" class="p-5 text-end">
   <input type="search" id="search"  name="search" placeholder="Search...">
   <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
 </form>
@@ -74,9 +74,7 @@
                   <div class="row">
                      <div class="col-md-3">
                         <div class="w-100 h-100">
-                           {{-- @foreach ($teams as $team) --}}
                            <img src="{{ Storage::url($team->image)}}" alt="" class="img-fluid fitImg" />
-                           {{-- @endforeach --}}
                         </div>
                      </div>
                      <div class="col-md-9">
