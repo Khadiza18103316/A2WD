@@ -34,9 +34,12 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Image Category</label>
-                                <input value="{{ $gallery->category }}" required name="category" type="text" placeholder="Category" class="form-control">
-
+                                <label for="exampleInputEmail1" class="form-label">Category</label>
+                                <select class="form-control" value="{{ $product->category->name }}" name="category">
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                        

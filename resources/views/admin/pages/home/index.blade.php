@@ -15,10 +15,10 @@
     <p class="alert alert-message">{{session()->get('message')}}</p>
 @endif 
 
-    <a href="{{ route('home.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add Home</a>
+    <a href="{{ route('home.create') }}" class="btn btn-primary float-end" ><i class="fa fa-plus"></i>Add Home</a>
     <br>
     <br>
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" style="width: 100%">
         <thead>
             <tr>
                 <th scope="col">#</th>

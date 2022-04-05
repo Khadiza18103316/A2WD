@@ -15,7 +15,7 @@
                 <li class="sidebar-item  ">
                     <a href="{{route('home.index')}}" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Home</span>
+                        <span>Banner</span>
                     </a>
                 </li>
 
@@ -27,11 +27,27 @@
                 </li>
 
                 <li class="sidebar-item  ">
+                    <a href="{{route('category.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Category</span>
+                    </a>
+                </li>
+
+
+                <li class="sidebar-item  ">
                     <a href="{{route('team.index')}}" class='sidebar-link'>
                         <i class="bi bi-grid-1x2-fill"></i>
                         <span>Teammates</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item  ">
+                    <a href="{{route('setting.index')}}" class='sidebar-link'>
+                        <i class="fa-solid fa-wrench"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

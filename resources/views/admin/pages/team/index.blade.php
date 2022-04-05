@@ -15,7 +15,7 @@
     <p class="alert alert-message">{{session()->get('message')}}</p>
 @endif 
 
-    <a href="{{ route('team.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Add Teammates</a>
+    <a href="{{ route('team.create') }}" class="btn btn-primary float-end"><i class="fa fa-plus"></i>Add Teammates</a>
     <br>
     <br>
     <table class="table table-striped table-bordered table-hover">
@@ -24,6 +24,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Id</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Designation</th>
                 <th scope="col">Image</th> 
                 <th scope="col">Action</th>
@@ -35,6 +36,7 @@
                     <th>{{ $key + 1 }}</th>
                     <td>{{ $team->name }}</td>
                     <td>{{ $team->member_id }}</td>
+                    <td>{{ $team->phone }}</td>
                     <td>{{ $team->designation }}</td>
                     <td><img src="{{ Storage::url($team->image)}}" width="80"></td>
                     <td>

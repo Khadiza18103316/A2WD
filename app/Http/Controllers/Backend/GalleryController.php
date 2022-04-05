@@ -4,17 +4,19 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
     public function index(){
-        $galleries =Gallery::paginate(5);
+        $galleries =Gallery::with('category')->get()   ;
         return view ('admin.pages.gallery.index', compact('galleries'));
     }
 
     public function create(){
-        return view ('admin.pages.gallery.create');
+        $categories=Category::all();
+        return view ('admin.pages.gallery.create', compact('categories'));
     }
 
     public function store(Request $request){
@@ -29,7 +31,7 @@ class GalleryController extends Controller
         Gallery::create([
             // field name for DB || field name for form
             'name' =>$request->name,
-            'category' =>$request->category,
+            'category_id' =>$request->category,
             'image' =>$path,
         ]);
         return redirect()->route('gallery.index')->with('success', 'Created Successfully!');
@@ -37,15 +39,16 @@ class GalleryController extends Controller
 
     public function details($id)
     {
-      $gallery=gallery::find($id);
+      $gallery=Gallery::find($id);
       return view ('admin.pages.gallery.details',compact('gallery'));
     }
 
     public function edit($id)
     {
-        $gallery = gallery::find($id);
+        $gallery = Gallery::find($id);
+        $categories=Category::all();
         if ($gallery) {
-            return view('admin.pages.gallery.edit',compact('gallery'));
+            return view('admin.pages.gallery.edit',compact('gallery','categories'));
         }
     }
 
@@ -57,7 +60,7 @@ class GalleryController extends Controller
             'image'=>'required',
         ]);
         
-        $gallery = gallery::find($id); 
+        $gallery = Gallery::find($id); 
 
         if($request->has('image')){
             $path = $request->image->store('public/gallery');
@@ -68,7 +71,7 @@ class GalleryController extends Controller
         if ($gallery) {
             $gallery->update([
                 'name' =>$request->name,
-                'category' =>$request->category,
+                'category_id' =>$request->category,
                 'image' =>$path,
             ]);
             return redirect()->route('gallery.index')->with('message', 'Updated Successfully!');
@@ -77,7 +80,7 @@ class GalleryController extends Controller
 
     public function delete($id)
     {
-      gallery::find($id)->delete();
+      Gallery::find($id)->delete();
       return redirect()->route('gallery.index')->with('msg','Deleted.');
     }
 }

@@ -42,7 +42,7 @@
 		        	<li class="nav-item"><a href="{{route('frontend.about')}}" class="nav-link">About</a></li>
 		        	<li class="nav-item active"><a href="{{route('frontend.gallery')}}" class="nav-link">Gallery</a></li>
 		        	<li class="nav-item"><a href="{{route('frontend.team')}}" class="nav-link">Team mates</a></li>
-		          <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+		          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 		        </ul>
 		      </div>
 		    </div>
@@ -97,7 +97,7 @@
           <li>- <a href="{{route('frontend.about')}}">About</a></li>
           <li>- <a href="{{route('frontend.gallery')}}">Gallery</a></li>
           <li>- <a href="{{route('frontend.team')}}">Team mates</a></li>
-          <li>- <a href="../index.html#contact">Contact</a></li>
+          <li>- <a href="#contact">Contact</a></li>
         </ul>
     </div>
     <div class="col-lg-4 col-xs-12 location pb-4 ">

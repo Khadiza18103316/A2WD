@@ -9,6 +9,10 @@ use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\TeammatesController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SettingController;
+
+// Frontend
 use App\Http\Controllers\Frontend\FrontendController;
 
 
@@ -63,3 +67,21 @@ Route::get ('/team/details/{id}',[TeammatesController::class,'details'])->name('
 Route::get ('/team/edit/{id}',[TeammatesController::class,'edit'])->name('team.edit');
 Route::put ('/team/update/{id}',[TeammatesController::class,'update'])->name('team.update');
 Route::get ('/team/delete/{id}',[TeammatesController::class,'delete'])->name('team.delete');
+
+// Category 
+Route::get ('/category/index',[CategoryController::class,'index'])->name('category.index');
+Route::get ('/category/create',[CategoryController::class,'create'])->name('category.create');
+Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+Route::get ('/category/details/{id}',[CategoryController::class,'details'])->name('category.details');
+Route::get ('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+Route::put ('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+Route::get ('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+// Setting
+Route::get ('/setting/index',[SettingController::class,'index'])->name('setting.index');
+Route::get ('/setting/create',[SettingController::class,'create'])->name('setting.create');
+Route::post('/setting/store',[SettingController::class,'store'])->name('setting.store');
+Route::get ('/setting/details/{id}',[SettingController::class,'details'])->name('setting.details');
+Route::get ('/setting/edit/{id}',[SettingController::class,'edit'])->name('setting.edit');
+Route::put ('/setting/update/{id}',[SettingController::class,'update'])->name('setting.update');
+Route::get ('/setting/delete/{id}',[SettingController::class,'delete'])->name('setting.delete');

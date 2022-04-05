@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-12">
-    <h3 class="mb-4">Add Gallery</h3>
+    <h3 class="mb-4">Add Category</h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
@@ -16,16 +16,16 @@
     <div class="col-12">
         <div class="card shadow position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Gallery Informations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Category Informations</h6>
             </div>
             <div class="card-body">
 
-                <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Image Name</label>
+                                <label for="exampleInputEmail1" class="form-label">Name</label>
                                 <input required name="name" type="text" placeholder="Name" class="form-control">
 
                             </div>
@@ -33,12 +33,9 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Category</label>
-                                <select class="form-control" required name="category">
-                                    @foreach ($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="exampleInputEmail1" class="form-label">Category Id</label>
+                                <input required name="category_id" type="number" placeholder="Id" class="form-control">
+
                             </div>
                         </div>
                        
@@ -56,7 +53,7 @@
                         </span>
                         <span class="text">Submit</span>
                     </button>
-                    <a href="{{ route('gallery.index') }}" class="btn btn-danger btn-icon-split">
+                    <a href="{{ route('category.index') }}" class="btn btn-danger btn-icon-split">
                         <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>

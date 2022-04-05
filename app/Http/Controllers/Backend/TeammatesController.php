@@ -22,6 +22,7 @@ class TeammatesController extends Controller
         $request->validate([
             'name'=>'required',
             'member_id'=>'required|numeric',
+            'phone'=>'required|numeric',
             'designation'=>'required',
             'image'=>'required',
         ]);
@@ -31,6 +32,7 @@ class TeammatesController extends Controller
             // field name for DB || field name for form
             'name' =>$request->name,
             'member_id' =>$request->member_id,
+            'phone' =>$request->phone,
             'designation' =>$request->designation,
             'image' =>$path,
         ]);
@@ -56,6 +58,7 @@ class TeammatesController extends Controller
         $request->validate([
             'name'=>'required',
             'member_id'=>'required|numeric',
+            'phone'=>'required|numeric',
             'designation'=>'required',
             'image'=>'required',
         ]);
@@ -72,6 +75,7 @@ class TeammatesController extends Controller
             $team->update([
             'name' =>$request->name,
             'member_id' =>$request->member_id,
+            'phone' =>$request->phone,
             'designation' =>$request->designation,
             'image' =>$path,
             ]);

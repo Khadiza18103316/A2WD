@@ -3,10 +3,16 @@
 
 <div class="slider" id="slider1">
     <!-- Slides -->
-
+    
     @foreach ($homes as $home)
-    <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
+    <div>
+      <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
+    </div>
     @endforeach
+
+    {{-- @foreach ($homes as $home)
+    <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
+    @endforeach --}}
 
     <!-- The Arrows -->
     <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
@@ -15,6 +21,7 @@
     <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100">
             <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path>
         </svg></i>
+
     <!-- Title Bar -->
     <span class="titleBar">
         <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
@@ -60,7 +67,7 @@
                         <img class="card-img-top rounded-circle h-100 fitImg" src="{{ Storage::url($team->image)}}" height="900px" width="1370px" alt="Card image cap" >
 					  </div>
 					<div class="card-body position-absolute memberInfo pt-1" >
-						<h3 class="card-title text-white m-0">{{ $team->name }}</h3>
+						<h4 class="card-title text-white m-0">{{ $team->name }}</h4>
 						<p class="card-text text-white">ID : {{ $team->member_id }}</p>
 					</div>
 				</div>

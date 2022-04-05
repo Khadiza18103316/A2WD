@@ -1,4 +1,4 @@
-@extends('admin.master')
+{{-- @extends('admin.master')
 @section('content')
 
 <h3> Details </h3>
@@ -11,4 +11,4 @@
 <p>Phone No:{{ $team->phone }}</p>
 <p>Designation:{{ $team->designation }}</p>
 
-@endsection
+@endsection --}}

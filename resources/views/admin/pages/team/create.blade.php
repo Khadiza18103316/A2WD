@@ -40,12 +40,19 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Phone</label>
+                                <input required name="phone" type="number" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Designation</label>
                                 <input required name="designation" type="text" placeholder="Designation" class="form-control">
 
                             </div>
                         </div>
-                       
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <img id="output" src="" />
