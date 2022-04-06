@@ -2,8 +2,14 @@
 
 @section('content')
 
+@if(session()->has('message'))
+<p class="alert alert-success">
+    {{session()->get('message')}}
+</p>
+@endif
+
 <div class="page-heading">
-    <h3>Profile Statistics</h3>
+    <h3>Dashboard</h3>
 </div>
 <div class="page-content">
     <section class="row">

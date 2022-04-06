@@ -26,20 +26,12 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label"> Image Name</label>
+                                <label for="exampleInputEmail1" class="form-label"> Name</label>
                                 <input value="{{ $category->name }}" required name="name" type="text" placeholder="Name" class="form-control">
 
                             </div>
                         </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Image Category</label>
-                                <input value="{{ $category->category_id }}" required name="category" type="text" placeholder="Category" class="form-control">
-
-                            </div>
-                        </div>
-                       
+                        
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <img id="output" src="" />

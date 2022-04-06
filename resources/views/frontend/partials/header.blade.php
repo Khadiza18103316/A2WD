@@ -1,13 +1,14 @@
 <!-- navbar start here -->
 <nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
+  @foreach($settings as $setting)
     <div class="container">
-        <a class="navbar-brand" href="{{route('frontend.home')}}">
-            <img src="{{url('frontend/./assets/img/logo.png')}}" alt="" class="logo" />
-         Digital
-        </a>
+      <a class="navbar-brand" href="{{route('frontend.home')}}">
+        <img src="{{ Storage::url($setting->image)}}" alt="" class="logo" />
+     Digital
+    </a>
         <div class="social-media order-lg-last">
             <p class="mb-0 d-flex">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="{{ $setting->link }}" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
             </p>
@@ -25,5 +26,7 @@
         </ul>
       </div>
     </div>
+    @endforeach
+
   </nav>
 <!-- END nav -->

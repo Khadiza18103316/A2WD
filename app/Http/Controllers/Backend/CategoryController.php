@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
     public function index(){
-        $categories =category::paginate(5);
+        $categories =Category::latest('id')->where('deleted', 'no')->get();
         return view ('admin.pages.category.index', compact('categories'));
     }
 
@@ -21,15 +21,13 @@ class CategoryController extends Controller
         
         $request->validate([
             'name'=>'required',
-            'category_id'=>'required|numeric',
             'image'=>'required',
         ]);
         
         $path = $request->image->store('public/category');
-        category::create([
+        Category::create([
             // field name for DB || field name for form
             'name' =>$request->name,
-            'category_id' =>$request->category_id,
             'image' =>$path,
         ]);
         return redirect()->route('category.index')->with('success', 'Created Successfully!');
@@ -53,7 +51,6 @@ class CategoryController extends Controller
 
         $request->validate([
             'name'=>'required',
-            'category_id'=>'required|numeric',
             'image'=>'required',
         ]);
         
@@ -68,7 +65,6 @@ class CategoryController extends Controller
         if ($category) {
             $category->update([
                 'name' =>$request->name,
-                'category_id' =>$request->category_id,
                 'image' =>$path,
             ]);
             return redirect()->route('category.index')->with('message', 'Updated Successfully!');
@@ -77,7 +73,14 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-      Category::find($id)->delete();
-      return redirect()->route('category.index')->with('msg','Deleted.');
+      $category=Category::find($id);
+      $category->name = $category->image. 'deleted' .$id;
+      $user = Auth::id();
+      $category->deleted_by = $user;
+      $category->deleted = 'yes';
+      $category->status = 'Inactive';
+      $category->save();
+      
+     return redirect()->route('category.index')->with('msg','Deleted.');
     }
 }

@@ -31,13 +31,6 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Category Id</label>
-                                <input required name="category_id" type="number" placeholder="Id" class="form-control">
-
-                            </div>
-                        </div>
                        
                         <div class="col-lg-6">
                             <div class="mb-3">

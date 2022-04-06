@@ -23,7 +23,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Category Id</th>
                 <th scope="col">Image</th> 
                 <th scope="col">Action</th>
             </tr>
@@ -33,7 +32,6 @@
                 <tr>
                     <th>{{ $key + 1 }}</th>
                     <td>{{ $category->name }}</td>
-                    <td>{{ $category->category_id}}</td>
                     <td><img src="{{ Storage::url($category->image)}}" width="80"></td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="{{ route('category.details', $category->id) }}">Details</i></a>
@@ -44,6 +42,6 @@
             @endforeach
         </tbody>
     </table>
-    {{ $categories->links() }}
+    {{-- {{ $categories->links() }} --}}
 
 @endsection

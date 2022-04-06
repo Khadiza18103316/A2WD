@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 
 // Backend
 use App\Http\Controllers\Backend\DashboardController;
@@ -22,6 +22,8 @@ Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
 Route::get('/gallery',[FrontendController::class,'gallery'])->name('frontend.gallery');
 Route::get('/team',[FrontendController::class,'team'])->name('frontend.team');
 Route::get('/about',[FrontendController::class,'about'])->name('frontend.about');
+Route::get('/logo',[FrontendController::class,'logo'])->name('frontend.logo');
+Route::get('/footer',[FrontendController::class,'footer'])->name('frontend.footer');
 
 //Search
 Route::get ('/search',[FrontendController::class,'search'])->name('search');
@@ -29,9 +31,10 @@ Route::get ('/search',[FrontendController::class,'search'])->name('search');
 
 // Admin Start
 Route::group(['prefix'=>'admin'],function(){
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('admin.pages.dashboard.dash');
 })->name('admin.dashboard');
+
 });
 
 // Dashboard
@@ -85,3 +88,7 @@ Route::get ('/setting/details/{id}',[SettingController::class,'details'])->name(
 Route::get ('/setting/edit/{id}',[SettingController::class,'edit'])->name('setting.edit');
 Route::put ('/setting/update/{id}',[SettingController::class,'update'])->name('setting.update');
 Route::get ('/setting/delete/{id}',[SettingController::class,'delete'])->name('setting.delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

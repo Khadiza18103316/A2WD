@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Home;
 use App\Models\Gallery;
 use App\Models\Team;
+use App\Models\Setting;
+
 // use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -15,7 +17,8 @@ class FrontendController extends Controller
         $homes=Home::all();
         $galleries=Gallery::all();
         $teams=Team::all();
-        return view('frontend.pages.home',compact('homes','galleries', 'teams'));
+        $settings=Setting::all();
+        return view('frontend.pages.home',compact('homes','galleries', 'teams','settings'));
     
     }
 
@@ -39,7 +42,7 @@ class FrontendController extends Controller
     
     }
 
-      // Search Method
+      // Search 
         public function search(){
 
             $key=request()->search;
@@ -48,5 +51,19 @@ class FrontendController extends Controller
             ->orWhere('designation','LIKE','%'.$key.'%')->get();
             return view('frontend.pages.search',compact('teams','key'));
         }
+
+        public function logo()
+    {
+        $settings=Setting::all();
+        return view('frontend.partials.header',compact('settings'));
+    
+    }
+
+    public function footer()
+    {
+        $settings=Setting::all();
+        return view('frontend.patials.footer',compact('settings'));
+    
+    }
       
     }

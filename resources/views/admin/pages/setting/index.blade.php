@@ -22,7 +22,6 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Logo Image</th>
                 <th scope="col">Address</th>
                 <th scope="col">Mobile Number</th>
                 <th scope="col">Alternative Number</th>
@@ -30,6 +29,7 @@
                 <th scope="col">Footer Text</th>
                 <th scope="col">Location</th>
                 <th scope="col">Email</th>
+                <th scope="col">Logo Image</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -45,11 +45,11 @@
                     <td>{{ $setting->location}}</td>
                     <td>{{ $setting->email }}</td>
                     <td><img src="{{ Storage::url($setting->image)}}" width="80"></td>
-                    {{-- <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('setting.details', $setting->id) }}">Details</i></a>
-                        <a class="btn btn-info btn-sm" href="{{ route('setting.edit', $setting->id) }}">Edit</a>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('setting.delete', $setting->id) }}">Delete</a>
-                    </td> --}}
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{{ route('setting.details', $setting->id) }}">Details</i></a><br>
+                        <a class="btn btn-info btn-sm" href="{{ route('setting.edit', $setting->id) }}">Edit</a><br>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('setting.delete', $setting->id) }}">Delete</a><br>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

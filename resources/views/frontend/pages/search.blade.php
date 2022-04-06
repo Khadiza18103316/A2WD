@@ -5,7 +5,6 @@
 <br>
 <br>
     <h3 class="text-center">Teammates</h3>
-            @if (!empty($teams))
             @foreach ($teams as $team)
             <div class="teammates d-flex flex-column gap-4 teammates">
                <div class="card">
@@ -31,13 +30,4 @@
                </div>
             </div>
             @endforeach
-            @else
-            <tr>
-                <h1>
-                    Teammates not found...404!
-                </h1>
-                <th></th>
-            </tr>
-            @endif
-       
 @endsection

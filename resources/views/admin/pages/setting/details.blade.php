@@ -1,14 +1,17 @@
-{{-- @extends('admin.master')
+@extends('admin.master')
 @section('content')
 
 <h3> Details </h3>
 
 <p>                        
-    <td><img src="{{ Storage::url($team->image)}}" width="80"></td>
+    <td><img src="{{ Storage::url($setting->image)}}" width="80"></td>
 </p>
-<p>Name:{{$team->name}} </p>
-<p>Category:{{ $team->member_id }}</p>
-<p>Phone No:{{ $team->phone }}</p>
-<p>Designation:{{ $team->designation }}</p>
+<p>Addrss:{{$setting->address}} </p>
+<p>Mobile Number:{{ $setting->mbl_num }}</p>
+<p>Alternative Number:{{ $setting->alt_num}}</p>
+<p>Link:{{ $setting->link }}</p>
+<p>Footer Text:{{ $setting->footer_text }}</p>
+<p>Location:{{ $setting->location }}</p>
+<p>Email:{{ $setting->email }}</p>
 
-@endsection --}}
+@endsection

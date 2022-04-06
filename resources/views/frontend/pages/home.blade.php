@@ -93,15 +93,17 @@
              <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-6 p-3 col-lg-12 m-auto">
                   <div class="info-box mb-4 cap">
+                    @foreach($settings as $setting)
                  <i class="fa-solid fa-location-dot"></i>
                     <h3>Our Address</h3>
-                    <p>A108 Adam Street, New York, NY 535022</p><br>
+                    <p>{{$setting->address}}</p><br>
                     
                     <i class="fa-solid fa-phone"></i>
                     <h3>Call Us</h3>
-                    <p>+1 5589 55488 55</p>
-                    <p>+1 5589 55488 67</p>
+                    <p>{{$setting->mbl_num}}</p>
+                    <p>{{ $setting->alt_num }}</p>
                   </div>
+                  @endforeach
                 </div>
 
               </div>

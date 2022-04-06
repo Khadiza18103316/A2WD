@@ -4,7 +4,8 @@
       <div class="row">
         <div class="col-lg-5 col-xs-12 about-company pb-4">
           <h2>DIGITAL</h2>
-          <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+          @foreach($settings as $setting)
+          <p class="pr-5 text-white-50">{{ $setting->footer_text }}</p>
        
         </div>
         <div class="col-lg-3 col-xs-12 links pb-4">
@@ -19,10 +20,11 @@
         </div>
         <div class="col-lg-4 col-xs-12 location pb-4 ">
           <h4 class="mt-lg-0 mt-sm-4 text-white">Location</h4>
-          <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+          <p>{{ $setting->location}}</p>
           <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
-          <p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
+          <p><i class="fa fa-envelope-o mr-3"></i>{{ $setting->email }}</p>
         </div>
+        @endforeach
       </div>
       <div class="row mt-1">
         <div class="col copyright">
