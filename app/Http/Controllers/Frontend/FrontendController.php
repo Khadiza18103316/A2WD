@@ -47,11 +47,12 @@ class FrontendController extends Controller
 
       // Search 
         public function search(){
+            $settings=Setting::latest()->get();
             $key=request()->search;
             $teams = Team::where('name','LIKE','%'.$key.'%')
                 ->orWhere('member_id','LIKE','%'.$key.'%')
-                ->orWhere('designation','LIKE','%'.$key.'%')->get();    
-            return view('frontend.pages.search',compact('teams','key'));
+                ->orWhere('phone','LIKE','%'.$key.'%')->get();    
+            return view('frontend.pages.search',compact('teams','settings','key'));
         }
 
         public function logo()

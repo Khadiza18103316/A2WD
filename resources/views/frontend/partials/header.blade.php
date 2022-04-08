@@ -13,7 +13,7 @@
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
             </p>
     </div>
-    @endforeach
+    
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span>
       </button>
@@ -27,5 +27,6 @@
         </ul>
       </div>
     </div>
+    @endforeach
   </nav>
 <!-- END nav -->

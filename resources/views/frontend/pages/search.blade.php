@@ -1,4 +1,4 @@
-@include('frontend.index') 
+@extends('frontend.index') 
 @section('content')
 
 <br>
@@ -19,6 +19,10 @@
                            <h4 class="card-title">{{ $team->name }}</h4>
                            <p class="m-0 text-muted">ID : {{ $team->member_id }}</p>
                            <p class="card-text">{{ $team->designation }}</p>
+                           <p>
+                              <i class="fa-solid fa-phone"></i>
+                              {{ $team->phone }}
+                           </p>
                           <span class="social-media-profile">
                               <a href="https://facebook.com" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
                               <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>

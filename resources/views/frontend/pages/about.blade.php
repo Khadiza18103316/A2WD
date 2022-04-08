@@ -114,10 +114,6 @@
 </div>
 </div>
 
-
-
-
-
   <script src="{{url('frontend/./assets/js/jquery.min.js')}}"></script>
   <script src="{{url('frontend/./assets/js/popper.js')}}"></script>
   <script src="{{url('frontend/./assets/js/bootstrap.min.js')}}"></script>
