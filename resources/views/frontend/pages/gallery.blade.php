@@ -62,14 +62,17 @@
  <div class="portfolio-menu mt-2 mb-4">
             <ul>
                <li class="btn btn-outline-dark active" data-filter="*">All</li>
-               <li class="btn btn-outline-dark" data-filter=".web">Websites</li>
-               <li class="btn btn-outline-dark" data-filter=".graphics">Graphics</li>
-               <li class="btn btn-outline-dark text" data-filter=".marketing">Marketing</li>
+               @foreach($categories as $category)
+               
+               <li class="btn btn-outline-dark"  data-filter=".{{$category->id}}">{{$category->name}}</li>
+               {{-- <li class="btn btn-outline-dark" data-filter=".graphics">Graphics</li>
+               <li class="btn btn-outline-dark text" data-filter=".marketing">Marketing</li> --}}
+               @endforeach
             </ul>
          </div>
          <div class="portfolio-item row">
             @foreach ($galleries as $gallery)
-            <div class="item web col-lg-3 col-md-4 col-6 col-sm">
+            <div class="item {{$gallery->category_id}} col-lg-3 col-md-4 col-6 col-sm" >
                <a href="{{ Storage::url($gallery->image)}}" class="fancylight popup-btn" data-fancybox-group="light"> 
                <img class="img-fluid" src="{{ Storage::url($gallery->image)}}" alt="">
                </a>

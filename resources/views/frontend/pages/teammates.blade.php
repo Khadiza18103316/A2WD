@@ -22,16 +22,18 @@
 			<nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
 		    <div class="container">
 		    	<a class="navbar-brand" href="{{route('frontend.home')}}">
-               <img src="{{url('frontend/./assets/img/logo.png')}}" alt="" class="logo" />
-               Digital
+            @foreach($settings as $setting)
+            <img src="{{ Storage::url($setting->image)}}" alt="" class="logo" />
+            Digital
             </a>
 		    	<div class="social-media order-lg-last">
 		    		<p class="mb-0 d-flex">
-		    			<a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
+		    			<a href="{{ $setting->link }}" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-facebook-f"></i></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-twitter"></i></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
 		    		</p>
 	        </div>
+          @endforeach
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="fa fa-bars"></span>
 		      </button>

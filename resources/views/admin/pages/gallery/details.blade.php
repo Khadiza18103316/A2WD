@@ -7,5 +7,5 @@
     <td><img src="{{ Storage::url($gallery->image)}}" width="80"></td>
 </p>
 <p>Name:{{$gallery->name}} </p>
-<p>Category:{{ $gallery->category }}</p>
+<p>Category:{{ $gallery->category->name }}</p>
 @endsection

@@ -1,8 +1,8 @@
 <!-- navbar start here -->
 <nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
-  @foreach($settings as $setting)
     <div class="container">
       <a class="navbar-brand" href="{{route('frontend.home')}}">
+        @foreach($settings as $setting)
         <img src="{{ Storage::url($setting->image)}}" alt="" class="logo" />
      Digital
     </a>
@@ -13,6 +13,7 @@
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
             </p>
     </div>
+    @endforeach
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span>
       </button>
@@ -26,7 +27,5 @@
         </ul>
       </div>
     </div>
-    @endforeach
-
   </nav>
 <!-- END nav -->

@@ -10,12 +10,12 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function index(){
-        $galleries =Gallery::with('category')->get()   ;
+        $galleries =Gallery::with('category')->get();
         return view ('admin.pages.gallery.index', compact('galleries'));
     }
 
     public function create(){
-        $categories=Category::all();
+        $categories=Category::where('deleted','no')->get();
         return view ('admin.pages.gallery.create', compact('categories'));
     }
 
@@ -46,7 +46,7 @@ class GalleryController extends Controller
     public function edit($id)
     {
         $gallery = Gallery::find($id);
-        $categories=Category::all();
+        $categories=Category::where('deleted','no')->get();
         if ($gallery) {
             return view('admin.pages.gallery.edit',compact('gallery','categories'));
         }

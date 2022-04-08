@@ -35,7 +35,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Category</label>
-                                <select class="form-control" value="{{ $product->category->name }}" name="category">
+                                <select class="form-control" value="{{ $gallery->category->name }}" name="category">
                                     @foreach ($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TeammatesController extends Controller
 {
     public function index(){
-        $teams =team::paginate(5);
+        $teams =team::latest()->get();
         return view ('admin.pages.team.index',compact('teams'));
     }
 

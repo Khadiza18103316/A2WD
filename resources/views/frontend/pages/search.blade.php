@@ -1,4 +1,4 @@
-@extends('frontend.index')
+@include('frontend.index') 
 @section('content')
 
 <br>

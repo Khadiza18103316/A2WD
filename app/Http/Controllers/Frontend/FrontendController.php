@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Home;
 use App\Models\Gallery;
 use App\Models\Team;
+use App\Models\Category;
 use App\Models\Setting;
 
 // use Illuminate\Http\Request;
@@ -25,14 +26,16 @@ class FrontendController extends Controller
     public function gallery()
     {
         $galleries=Gallery::all();
-        return view('frontend.pages.gallery',compact('galleries'));
+        $categories=Category::where('deleted','no')->get();
+        return view('frontend.pages.gallery',compact('galleries','categories'));
     
     }
 
     public function team()
     {
-        $teams=Team::all();
-        return view('frontend.pages.teammates',compact('teams'));
+        $teams=Team::latest()->get();
+        $settings=Setting::all();
+        return view('frontend.pages.teammates',compact('teams','settings'));
     
     }
 
@@ -44,11 +47,10 @@ class FrontendController extends Controller
 
       // Search 
         public function search(){
-
             $key=request()->search;
             $teams = Team::where('name','LIKE','%'.$key.'%')
-            ->orWhere('member_id','LIKE','%'.$key.'%')
-            ->orWhere('designation','LIKE','%'.$key.'%')->get();
+                ->orWhere('member_id','LIKE','%'.$key.'%')
+                ->orWhere('designation','LIKE','%'.$key.'%')->get();    
             return view('frontend.pages.search',compact('teams','key'));
         }
 
@@ -65,5 +67,5 @@ class FrontendController extends Controller
         return view('frontend.patials.footer',compact('settings'));
     
     }
-      
+    
     }
