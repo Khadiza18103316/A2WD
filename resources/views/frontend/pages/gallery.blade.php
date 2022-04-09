@@ -65,8 +65,6 @@
                @foreach($categories as $category)
                
                <li class="btn btn-outline-dark"  data-filter=".{{$category->id}}">{{$category->name}}</li>
-               {{-- <li class="btn btn-outline-dark" data-filter=".graphics">Graphics</li>
-               <li class="btn btn-outline-dark text" data-filter=".marketing">Marketing</li> --}}
                @endforeach
             </ul>
          </div>

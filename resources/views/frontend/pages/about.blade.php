@@ -61,16 +61,19 @@
 <div class="row">
    <div class="col-md-4">
       <div class="aboutImgContainer">
-         <img src="https://img.freepik.com/free-vector/teamwork-concept-landing-page_52683-21300.jpg" class="img-fluid" alt="" />
+        @foreach($abouts as $about)
+         <img src="{{ Storage::url($about->image)}}" class="img-fluid" alt="" />
       </div>
    </div>
    <div class="col-md-8">
       <div class="aboutInfo">
          <h2>We are ...</h2>
-         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+         <p class="text-muted">{{ $about->description }}</p>
+         {{-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p> --}}
       </div>
+      @endforeach
+
    </div>
 </div>
    </div>

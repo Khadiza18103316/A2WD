@@ -7,6 +7,7 @@ use App\Models\Home;
 use App\Models\Gallery;
 use App\Models\Team;
 use App\Models\Category;
+use App\Models\About;
 use App\Models\Setting;
 
 // use Illuminate\Http\Request;
@@ -41,7 +42,8 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('frontend.pages.about');
+        $abouts=About::where('deleted','no')->get();
+        return view('frontend.pages.about',compact('abouts'));
     
     }
 

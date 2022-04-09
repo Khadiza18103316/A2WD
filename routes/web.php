@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\TeammatesController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\AboutController;
+
 
 // Frontend
 use App\Http\Controllers\Frontend\FrontendController;
@@ -88,6 +90,15 @@ Route::get ('/setting/details/{id}',[SettingController::class,'details'])->name(
 Route::get ('/setting/edit/{id}',[SettingController::class,'edit'])->name('setting.edit');
 Route::put ('/setting/update/{id}',[SettingController::class,'update'])->name('setting.update');
 Route::get ('/setting/delete/{id}',[SettingController::class,'delete'])->name('setting.delete');
+
+// About
+Route::get ('/about/index',[AboutController::class,'index'])->name('about.index');
+Route::get ('/about/create',[AboutController::class,'create'])->name('about.create');
+Route::post('/about/store',[AboutController::class,'store'])->name('about.store');
+Route::get ('/about/details/{id}',[AboutController::class,'details'])->name('about.details');
+Route::get ('/about/edit/{id}',[AboutController::class,'edit'])->name('about.edit');
+Route::put ('/about/update/{id}',[AboutController::class,'update'])->name('about.update');
+Route::get ('/about/delete/{id}',[AboutController::class,'delete'])->name('about.delete');
 
 Auth::routes();
 

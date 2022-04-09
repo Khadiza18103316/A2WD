@@ -40,6 +40,12 @@
                         <span>Teammates</span>
                     </a>
                 </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route('about.index')}}" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>About</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item  ">
                     <a href="{{route('setting.index')}}" class='sidebar-link'>
