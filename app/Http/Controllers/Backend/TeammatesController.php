@@ -55,14 +55,6 @@ class TeammatesController extends Controller
 
     public function update(Request $request,$id){
 
-        $request->validate([
-            'name'=>'required',
-            'member_id'=>'required|numeric',
-            'phone'=>'required|numeric',
-            'designation'=>'required',
-            'image'=>'required',
-        ]);
-        
         $team = Team::find($id); 
 
         if($request->has('image')){

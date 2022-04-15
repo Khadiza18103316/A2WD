@@ -50,11 +50,6 @@ class AboutController extends Controller
 
     public function update(Request $request,$id){
 
-        $request->validate([
-            'description'=>'required',
-            'image'=>'required',
-        ]);
-        
         $about = About::find($id); 
 
         if($request->has('image')){

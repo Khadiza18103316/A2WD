@@ -5,15 +5,15 @@
 
     @if(session()->has('msg'))
     <p class="alert alert-danger">{{session()->get('msg')}}</p>
-@endif 
+@endif
 
 @if(session()->has('success'))
     <p class="alert alert-success">{{session()->get('success')}}</p>
-@endif 
+@endif
 
 @if(session()->has('message'))
     <p class="alert alert-message">{{session()->get('message')}}</p>
-@endif 
+@endif
 
     <a href="{{ route('setting.create') }}" class="btn btn-primary float-end"><i class="fa fa-plus"></i>Add</a>
     <br>
@@ -22,6 +22,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Logo Text</th>
                 <th scope="col">Address</th>
                 <th scope="col">Mobile Number</th>
                 <th scope="col">Alternative Number</th>
@@ -37,6 +38,7 @@
             @foreach ($settings as $key => $setting)
                 <tr>
                     <th>{{ $key + 1 }}</th>
+                    <td>{{ $setting->logo_text }}</td>
                     <td>{{ $setting->address }}</td>
                     <td>{{ $setting->mbl_num }}</td>
                     <td>{{ $setting->alt_num }}</td>

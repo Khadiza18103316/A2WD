@@ -61,9 +61,8 @@
 
  <div class="portfolio-menu mt-2 mb-4">
             <ul>
-               <li class="btn btn-outline-dark active" data-filter="*">All</li>
-               @foreach($categories as $category)
-               
+                <li class="btn btn-outline-dark active" data-filter="*">All</li>
+                @foreach($categories as $category)
                <li class="btn btn-outline-dark"  data-filter=".{{$category->id}}">{{$category->name}}</li>
                @endforeach
             </ul>
@@ -71,7 +70,7 @@
          <div class="portfolio-item row">
             @foreach ($galleries as $gallery)
             <div class="item {{$gallery->category_id}} col-lg-3 col-md-4 col-6 col-sm" >
-               <a href="{{ Storage::url($gallery->image)}}" class="fancylight popup-btn" data-fancybox-group="light"> 
+               <a href="{{ Storage::url($gallery->image)}}" class="fancylight popup-btn" data-fancybox-group="light">
                <img class="img-fluid" src="{{ Storage::url($gallery->image)}}" alt="">
                </a>
             </div>
@@ -89,7 +88,7 @@
     <div class="col-lg-5 col-xs-12 about-company pb-4">
       <h2>DIGITAL</h2>
       <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
-   
+
     </div>
     <div class="col-lg-3 col-xs-12 links pb-4">
       <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>
@@ -121,7 +120,7 @@
   <script src="{{url('frontend/./assets/js/bootstrap.min.js')}}"></script>
   <script src="{{url('frontend/./assets/js/main.js')}}"></script>
   <script src="{{url('frontend/./assets/js/slider.js')}}"></script>
- 
+
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>

@@ -16,7 +16,7 @@
     <div class="col-12">
         <div class="card shadow position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Home Image Informations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Home  Informations</h6>
             </div>
             <div class="card-body">
 
@@ -27,7 +27,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                                <input value="{{$home->name}}" required name="name" type="text" placeholder="Name" class="form-control">
+                                <input value="{{$home->name}}"  name="name" type="text" placeholder="Name" class="form-control">
 
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="mb-3">
                                 <img id="output" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
-                                <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
+                                <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($home->image)}}" width="80">
                             </div>
                         </div>

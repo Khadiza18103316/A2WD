@@ -27,7 +27,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label"> Name</label>
-                                <input value="{{ $category->name }}" required name="name" type="text" placeholder="Name" class="form-control">
+                                <input value="{{ $category->name }}"  name="name" type="text" placeholder="Name" class="form-control">
 
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="mb-3">
                                 <img id="output" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
-                                <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
+                                <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($category->image)}}" width="80">
                             </div>
                         </div>

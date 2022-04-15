@@ -2,16 +2,16 @@
 
 @section('content')
 
-@if(session()->has('message'))
+{{-- @if(session()->has('message'))
 <p class="alert alert-success">
     {{session()->get('message')}}
 </p>
-@endif
+@endif --}}
 
 <div class="page-heading">
-    <h3>Dashboard</h3>
+    <h3 class="text-center">Dashboard</h3>
 </div>
-<div class="page-content">
+{{-- <div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">
@@ -86,5 +86,5 @@
             </div>
         </div>
     </section>
-</div>
+</div> --}}
 @endsection

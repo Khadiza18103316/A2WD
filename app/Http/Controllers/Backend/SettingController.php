@@ -12,14 +12,15 @@ class SettingController extends Controller
         $settings =Setting::paginate(5);
         return view ('admin.pages.setting.index',compact('settings'));
     }
-    
+
     public function create(){
         return view ('admin.pages.setting.create');
     }
 
     public function store(Request $request){
-        
+
         $request->validate([
+            'logo_text'=>'required',
             'address'=>'required',
             'image'=>'required',
             'mbl_num'=>'required',
@@ -30,10 +31,11 @@ class SettingController extends Controller
             'email'=>'required',
 
         ]);
-        
+
         $path = $request->image->store('public/setting');
         setting::create([
             // field name for DB || field name for form
+            'logo_text' =>$request->logo_text,
             'address' =>$request->address,
             'mbl_num' =>$request->mbl_num,
             'alt_num' =>$request->alt_num,
@@ -73,8 +75,8 @@ class SettingController extends Controller
             'email'=>'required',
 
         ]);
-        
-        $setting = Setting::find($id); 
+
+        $setting = Setting::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/setting');
@@ -84,6 +86,7 @@ class SettingController extends Controller
 
         if ($setting) {
             $setting->update([
+                'logo_text' =>$request->logo_text,
                 'address' =>$request->address,
                 'mbl_num' =>$request->mbl_num,
                 'alt_num' =>$request->alt_num,

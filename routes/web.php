@@ -8,14 +8,15 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\TeammatesController;
-use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\AboutController;
 
-
 // Frontend
 use App\Http\Controllers\Frontend\FrontendController;
+
+// Email
+use App\Http\Controllers\Email\EmailController;
 
 
 
@@ -41,9 +42,6 @@ Route::get('/admin', function () {
 
 // Dashboard
 Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
-
-// Contact
-Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');
 
 
 // Home
@@ -73,7 +71,7 @@ Route::get ('/team/edit/{id}',[TeammatesController::class,'edit'])->name('team.e
 Route::put ('/team/update/{id}',[TeammatesController::class,'update'])->name('team.update');
 Route::get ('/team/delete/{id}',[TeammatesController::class,'delete'])->name('team.delete');
 
-// Category 
+// Category
 Route::get ('/category/index',[CategoryController::class,'index'])->name('category.index');
 Route::get ('/category/create',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
@@ -99,6 +97,10 @@ Route::get ('/about/details/{id}',[AboutController::class,'details'])->name('abo
 Route::get ('/about/edit/{id}',[AboutController::class,'edit'])->name('about.edit');
 Route::put ('/about/update/{id}',[AboutController::class,'update'])->name('about.update');
 Route::get ('/about/delete/{id}',[AboutController::class,'delete'])->name('about.delete');
+
+// Email
+Route::post('/about/send',[EmailController::class,'send'])->name('send.email');
+
 
 Auth::routes();
 

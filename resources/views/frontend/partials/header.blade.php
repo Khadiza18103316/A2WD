@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="{{route('frontend.home')}}">
         @foreach($settings as $setting)
         <img src="{{ Storage::url($setting->image)}}" alt="" class="logo" />
-     Digital
+        {{ $setting->logo_text }}
     </a>
         <div class="social-media order-lg-last">
             <p class="mb-0 d-flex">
@@ -13,7 +13,7 @@
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-brands fa-instagram"></i></a>
             </p>
     </div>
-    
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span>
       </button>

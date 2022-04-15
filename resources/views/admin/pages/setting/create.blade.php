@@ -23,6 +23,14 @@
                 <form action="{{ route('setting.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Logo Text</label>
+                                <input required name="logo_text" type="text" class="form-control">
+                            </div>
+                        </div>
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Address</label>
@@ -48,12 +56,12 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Link</label>
-                                <input required name="link" type="text"  class="form-control">
+                                <input required name="link" type="link"  class="form-control">
 
                             </div>
                         </div>
 
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Footer Text</label>
@@ -62,7 +70,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Location</label>

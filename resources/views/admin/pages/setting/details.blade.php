@@ -3,9 +3,10 @@
 
 <h3> Details </h3>
 
-<p>                        
+<p>
     <td><img src="{{ Storage::url($setting->image)}}" width="80"></td>
 </p>
+<p>Logo Text:{{$setting->logo_text}} </p>
 <p>Addrss:{{$setting->address}} </p>
 <p>Mobile Number:{{ $setting->mbl_num }}</p>
 <p>Alternative Number:{{ $setting->alt_num}}</p>

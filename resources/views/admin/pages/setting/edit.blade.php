@@ -17,7 +17,7 @@
         <div class="card shadow position-relative">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary"> Informations</h6>
-            </div> 
+            </div>
             <div class="card-body">
 
                 <form action="{{ route('setting.update', $setting->id) }}" method="POST" enctype="multipart/form-data">
@@ -26,15 +26,22 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Logo Text</label>
+                                <input value="{{ $setting->logo_text }}" required name="logo" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Address</label>
-                                <input value="{{ $setting->address }}" required name="address" type="text" class="form-control">
+                                <input value="{{ $setting->address }}"  name="address" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
-                                <input value="{{ $setting->mbl_num }}" required name="mbl_num" type="number" class="form-control">
+                                <input value="{{ $setting->mbl_num }}"  name="mbl_num" type="number" class="form-control">
 
                             </div>
                         </div>
@@ -42,32 +49,32 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Alternative Number</label>
-                                <input value="{{ $setting->alt_num }}" required name="alt_num" type="number" class="form-control">
+                                <input value="{{ $setting->alt_num }}"  name="alt_num" type="number" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Link</label>
-                                <input value="{{  $setting->link }}" required name="link" type="text"  class="form-control">
+                                <input value="{{  $setting->link }}"  name="link" type="text"  class="form-control">
 
                             </div>
                         </div>
 
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Footer Text</label>
-                                <input value="{{ $setting->footer_text  }}" required name="footer_text" type="text"  class="form-control">
+                                <input value="{{ $setting->footer_text  }}"  name="footer_text" type="text"  class="form-control">
 
                             </div>
                         </div>
 
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Location</label>
-                                <input value="{{ $setting->location }}" required name="location" type="text"  class="form-control">
+                                <input value="{{ $setting->location }}"  name="location" type="text"  class="form-control">
 
                             </div>
                         </div>
@@ -75,7 +82,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input value="{{ $setting->email }}" required name="email" type="text"  class="form-control">
+                                <input value="{{ $setting->email }}"  name="email" type="text"  class="form-control">
 
                             </div>
                         </div>
@@ -84,7 +91,7 @@
                             <div class="mb-3">
                                 <img id="output" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Logo Image</label>
-                                <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
+                                <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($setting->image)}}" width="80">
                             </div>
                         </div>

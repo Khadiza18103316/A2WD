@@ -3,7 +3,7 @@
 
 <div class="slider" id="slider1">
     <!-- Slides -->
-    
+
     @foreach ($homes as $home)
     <div>
       <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
@@ -20,7 +20,7 @@
 
     <!-- Title Bar -->
     <span class="titleBar">
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        <h1>{{ $home->name }}</h1>
     </span>
 </div>
 
@@ -37,7 +37,7 @@
 
         @foreach ($galleries as $gallery)
             <div class="item web col-lg-3 col-md-4 col-6 col-sm">
-               <a href="{{ Storage::url($gallery->image)}}" class="fancylight popup-btn" data-fancybox-group="light"> 
+               <a href="{{ Storage::url($gallery->image)}}" class="fancylight popup-btn" data-fancybox-group="light">
                <img class="img-fluid" src="{{ Storage::url($gallery->image)}}" alt="">
                </a>
             </div>
@@ -93,7 +93,7 @@
                  <i class="fa-solid fa-location-dot"></i>
                     <h3>Our Address</h3>
                     <p>{{$setting->address}}</p><br>
-                    
+
                     <i class="fa-solid fa-phone"></i>
                     <h3>Call Us</h3>
                     <p>{{$setting->mbl_num}}</p>
@@ -101,11 +101,16 @@
                   </div>
                   @endforeach
                 </div>
-
               </div>
           </div>
+
           <div class="col-md-8 px-5 py-4 align-items-center d-flex" data-aos="fade-up" data-aos-delay="100">
-            <form action="{{route('contact.store')}}" method="POST">@csrf
+                <form action="{{route('send.email')}}" method="POST">@csrf
+
+            @if(session()->has('success'))
+            <p class="alert alert-success">{{session()->get('success')}}</p>
+            @endif
+
               <div class="row">
                 <div class="col">
                   <div class="form-group">
@@ -119,16 +124,16 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <input type="text" name="subject" class="form-control" placeholder="Subject" id="subject" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="msg" style="height: 150px;" id="msg" required></textarea>
+                <textarea class="form-control" name="message" style="height: 150px;" id="message" required></textarea>
               </div>
               <div class="form-group">
-                
-                <input type="submit" name="submit" class="btn btn-primary" id="submit" >
+
+                <input type="submit" name="submit" class="btn btn-primary float-end" id="submit" >
               </div>
             </form>
           </div>

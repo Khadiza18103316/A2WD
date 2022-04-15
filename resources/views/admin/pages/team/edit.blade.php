@@ -27,7 +27,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                                <input value="{{ $team->name }}" required name="name" type="text" placeholder="Name" class="form-control">
+                                <input value="{{ $team->name }}"  name="name" type="text" placeholder="Name" class="form-control">
 
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Id</label>
-                                <input value="{{ $team->member_id }}" required name="member_id" type="number" placeholder="Id" class="form-control">
+                                <input value="{{ $team->member_id }}"  name="member_id" type="number" placeholder="Id" class="form-control">
 
                             </div>
                         </div>
@@ -43,14 +43,14 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Phone</label>
-                                <input value="{{ $team->phone }}" required name="phone" type="number" placeholder="Phone" class="form-control">
+                                <input value="{{ $team->phone }}"  name="phone" type="number" placeholder="Phone" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Designation</label>
-                                <input value="{{ $team->designation }}" required name="designation" type="text" placeholder="Designation" class="form-control">
+                                <input value="{{ $team->designation }}"  name="designation" type="text" placeholder="Designation" class="form-control">
 
                             </div>
                         </div>

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('image');
+            $table->string('logo_text');
             $table->string('address');
             $table->bigInteger('mbl_num');
             $table->bigInteger('alt_num');
