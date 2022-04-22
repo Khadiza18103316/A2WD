@@ -31,10 +31,10 @@
 
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <img id="output" src="" />
+                                <img id="output" height="30" width="50" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
                                 <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($about->image)}}" width="80">

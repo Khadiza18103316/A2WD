@@ -20,13 +20,13 @@ class GalleryController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $request->validate([
             'name'=>'required',
             'category'=>'required',
-            'image'=>'required',
+            'image'=>'required|',
         ]);
-        
+
         $path = $request->image->store('public/gallery');
         Gallery::create([
             // field name for DB || field name for form
@@ -34,13 +34,7 @@ class GalleryController extends Controller
             'category_id' =>$request->category,
             'image' =>$path,
         ]);
-        return redirect()->route('gallery.index')->with('success', 'Created Successfully!');
-    }
-
-    public function details($id)
-    {
-      $gallery=Gallery::find($id);
-      return view ('admin.pages.gallery.details',compact('gallery'));
+        return redirect()->route('gallery.index')->with('success', 'Gallery Created Successfully!');
     }
 
     public function edit($id)
@@ -54,7 +48,7 @@ class GalleryController extends Controller
 
     public function update(Request $request,$id){
 
-        $gallery = Gallery::find($id); 
+        $gallery = Gallery::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/gallery');
@@ -68,13 +62,13 @@ class GalleryController extends Controller
                 'category_id' =>$request->category,
                 'image' =>$path,
             ]);
-            return redirect()->route('gallery.index')->with('message', 'Updated Successfully!');
+            return redirect()->route('gallery.index')->with('message', 'Gallery Updated Successfully!');
         }
     }
 
     public function delete($id)
     {
       Gallery::find($id)->delete();
-      return redirect()->route('gallery.index')->with('msg','Deleted.');
+      return redirect()->route('gallery.index')->with('msg','Gallery Deleted Successfully!');
     }
 }

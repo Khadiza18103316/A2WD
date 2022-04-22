@@ -12,18 +12,18 @@ class HomeController extends Controller
         $homes =Home::paginate(5);
         return view ('admin.pages.home.index',compact('homes'));
     }
-    
+
     public function create(){
         return view ('admin.pages.home.create');
     }
 
     public function store(Request $request){
-        
+
         $request->validate([
             'name'=>'required',
-            'image'=>'required',
+            'image'=>'required|',
         ]);
-        
+
         $path = $request->image->store('public/home');
         Home::create([
             // field name for DB || field name for form
@@ -31,12 +31,6 @@ class HomeController extends Controller
             'image' =>$path,
         ]);
         return redirect()->route('home.index')->with('success', 'Created Successfully!');
-    }
-
-    public function details($id)
-    {
-      $home=Home::find($id);
-      return view ('admin.pages.home.details',compact('home'));
     }
 
     public function edit($id)
@@ -48,8 +42,8 @@ class HomeController extends Controller
     }
 
     public function update(Request $request,$id){
-        
-        $home = Home::find($id); 
+
+        $home = Home::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/home');
@@ -69,6 +63,6 @@ class HomeController extends Controller
     public function delete($id)
     {
       Home::find($id)->delete();
-      return redirect()->route('home.index')->with('msg','Deleted.');
+      return redirect()->route('home.index')->with('msg','Deleted Successfully!');
     }
 }

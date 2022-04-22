@@ -2,16 +2,16 @@
 
 @section('content')
 
-{{-- @if(session()->has('message'))
+@if(session()->has('message'))
 <p class="alert alert-success">
     {{session()->get('message')}}
 </p>
-@endif --}}
+@endif
 
 <div class="page-heading">
     <h3 class="text-center">Dashboard</h3>
 </div>
-{{-- <div class="page-content">
+<div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-9">
             <div class="row">
@@ -20,13 +20,11 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="stats-icon purple">
-                                        <i class="iconly-boldShow"></i>
-                                    </div>
+                                        <i class="bi bi-grid-1x2-fill"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                    <h6 class="text-muted font-semibold">Banner</h6>
+                                    <h6 class="font-extrabold mb-0">{{$count['home']}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -37,13 +35,11 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="stats-icon blue">
-                                        <i class="iconly-boldProfile"></i>
-                                    </div>
+                                    <i class="bi bi-image-fill"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Followers</h6>
-                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                    <h6 class="text-muted font-semibold">Gallery</h6>
+                                    <h6 class="font-extrabold mb-0">{{$count['gallery']}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -54,13 +50,11 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="stats-icon green">
                                         <i class="iconly-boldAdd-User"></i>
-                                    </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Following</h6>
-                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                    <h6 class="text-muted font-semibold">User</h6>
+                                    <h6 class="font-extrabold mb-0">{{$count['user']}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -71,13 +65,11 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="stats-icon red">
-                                        <i class="iconly-boldBookmark"></i>
-                                    </div>
+                                        <i class="iconly-boldAdd-User"></i>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Saved Post</h6>
-                                    <h6 class="font-extrabold mb-0">112</h6>
+                                    <h6 class="text-muted font-semibold">Teammate</h6>
+                                    <h6 class="font-extrabold mb-0"> {{$count['team']}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -86,5 +78,5 @@
             </div>
         </div>
     </section>
-</div> --}}
+</div>
 @endsection

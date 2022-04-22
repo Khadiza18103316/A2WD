@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-12">
-    <h3 class="mb-4">Update Image</h3>
+    <h3 class="mb-4">Update Banner</h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
@@ -16,7 +16,7 @@
     <div class="col-12">
         <div class="card shadow position-relative">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Home  Informations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Banner  Informations</h6>
             </div>
             <div class="card-body">
 
@@ -31,10 +31,10 @@
 
                             </div>
                         </div>
-                       
+
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <img id="output" src="" />
+                                <img id="output" height="30" width="50" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
                                 <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($home->image)}}" width="80">
@@ -66,3 +66,4 @@ var loadFile = function(event){
     output.src = URL.createObjectURL(event.target.files[0]);
 };
 </script>
+

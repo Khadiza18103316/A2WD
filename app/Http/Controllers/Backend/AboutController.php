@@ -17,27 +17,21 @@ class AboutController extends Controller
     public function create(){
         return view('admin.pages.about.create');
     }
-    
+
     public function store(Request $request){
-        
+
         $request->validate([
             'description'=>'required',
-            'image'=>'required',
+            'image'=>'required|',
         ]);
-        
+
         $path = $request->image->store('public/about');
         about::create([
             // field name for DB || field name for form
             'description' =>$request->description,
             'image' =>$path,
         ]);
-        return redirect()->route('about.index')->with('success', 'Created Successfully!');
-    }
-
-    public function details($id)
-    {
-      $about=About::find($id);
-      return view ('admin.pages.about.details',compact('about'));
+        return redirect()->route('about.index')->with('success', 'About Created Successfully!');
     }
 
     public function edit($id)
@@ -50,7 +44,7 @@ class AboutController extends Controller
 
     public function update(Request $request,$id){
 
-        $about = About::find($id); 
+        $about = About::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/about');
@@ -63,7 +57,7 @@ class AboutController extends Controller
                 'description' =>$request->description,
                 'image' =>$path,
             ]);
-            return redirect()->route('about.index')->with('message', 'Updated Successfully!');
+            return redirect()->route('about.index')->with('message', 'About Updated Successfully!');
         }
     }
 
@@ -76,8 +70,8 @@ class AboutController extends Controller
       $about->deleted = 'yes';
       $about->status = 'Inactive';
       $about->save();
-      
-     return redirect()->route('about.index')->with('msg','Deleted.');
+
+     return redirect()->route('about.index')->with('msg','About Successfully!');
     }
-   
+
 }

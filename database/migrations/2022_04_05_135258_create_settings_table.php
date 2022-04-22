@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('image');
             $table->string('logo_text');
             $table->string('address');
-            $table->bigInteger('mbl_num');
-            $table->bigInteger('alt_num');
-            $table->string('link');
+            $table->string('mbl_num');
+            $table->string('alt_num');
+            $table->string('fb_link');
             $table->string('footer_text');
             $table->string('location');
             $table->string('email');

@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.dashboard.dash');
+        if(auth()->user()->is_admin == 1){
+        return redirect()->route('admin.dashboard');
     }
+}
 }

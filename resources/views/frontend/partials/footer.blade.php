@@ -6,7 +6,7 @@
           <h2>DIGITAL</h2>
           @foreach($settings as $setting)
           <p class="pr-5 text-white-50">{{ $setting->footer_text }}</p>
-       
+
         </div>
         <div class="col-lg-3 col-xs-12 links pb-4">
           <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>
@@ -21,7 +21,7 @@
         <div class="col-lg-4 col-xs-12 location pb-4 ">
           <h4 class="mt-lg-0 mt-sm-4 text-white">Location</h4>
           <p>{{ $setting->location}}</p>
-          <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
+          <p class="mb-0"><i class="fa fa-phone mr-3"></i>{{$setting->mbl_num}}</p>
           <p><i class="fa fa-envelope-o mr-3"></i>{{ $setting->email }}</p>
         </div>
         @endforeach
@@ -33,4 +33,3 @@
       </div>
     </div>
     </div>
-    

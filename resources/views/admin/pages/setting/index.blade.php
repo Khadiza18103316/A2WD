@@ -15,47 +15,45 @@
     <p class="alert alert-message">{{session()->get('message')}}</p>
 @endif
 
-    <a href="{{ route('setting.create') }}" class="btn btn-primary float-end"><i class="fa fa-plus"></i>Add</a>
+    <a href="{{ route('setting.create') }}" class="btn btn-primary float-end"><i class="fa fa-plus"></i>Add Setting</a>
     <br>
     <br>
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" width="100%">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Logo Text</th>
-                <th scope="col">Address</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Alternative Number</th>
-                <th scope="col">Link</th>
-                <th scope="col">Footer Text</th>
-                <th scope="col">Location</th>
-                <th scope="col">Email</th>
-                <th scope="col">Logo Image</th>
-                <th scope="col">Action</th>
+                <th width="5%" scope="col">#</th>
+                <th width="9%" scope="col">Logo Image</th>
+                <th width="9%" scope="col">Logo Text</th>
+                <th width="9%" scope="col">Address</th>
+                <th width="9%" scope="col">Mobile Number</th>
+                <th width="9%" scope="col">Alternative Number</th>
+                <th width="9%" scope="col">Facebook Link</th>
+                <th width="9%" scope="col">Footer Text</th>
+                <th width="9%" scope="col">Location</th>
+                <th width="9%" scope="col">Email</th>
+                <th width="14%" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($settings as $key => $setting)
                 <tr>
                     <th>{{ $key + 1 }}</th>
+                    <td><img src="{{ Storage::url($setting->image)}}" width="80"></td>
                     <td>{{ $setting->logo_text }}</td>
                     <td>{{ $setting->address }}</td>
                     <td>{{ $setting->mbl_num }}</td>
                     <td>{{ $setting->alt_num }}</td>
-                    <td>{{ $setting->link }}</td>
+                    <td>{{ $setting->fb_link }}</td>
                     <td>{{ $setting->footer_text }}</td>
                     <td>{{ $setting->location}}</td>
                     <td>{{ $setting->email }}</td>
-                    <td><img src="{{ Storage::url($setting->image)}}" width="80"></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('setting.details', $setting->id) }}">Details</i></a><br>
+                        <a class="btn btn-primary btn-sm" href="{{ route('setting.details', $setting->id) }}">Details</a><br>
                         <a class="btn btn-info btn-sm" href="{{ route('setting.edit', $setting->id) }}">Edit</a><br>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('setting.delete', $setting->id) }}">Delete</a><br>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('setting.delete', $setting->id) }}">Delete</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    {{ $settings->links() }}
-
 @endsection

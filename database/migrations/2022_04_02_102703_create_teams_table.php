@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('member_id');
-            $table->bigInteger('phone');
+            $table->string('phone');
             $table->string('designation');
             $table->string('image')->nullable();
             $table->timestamps();

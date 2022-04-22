@@ -27,7 +27,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Logo Text</label>
-                                <input value="{{ $setting->logo_text }}" required name="logo" type="text" class="form-control">
+                                <input value="{{ $setting->logo_text }}" name="logo_text" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -56,7 +56,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Link</label>
-                                <input value="{{  $setting->link }}"  name="link" type="text"  class="form-control">
+                                <input value="{{  $setting->fb_link }}"  name="fb_link" type="text"  class="form-control">
 
                             </div>
                         </div>
@@ -89,7 +89,7 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <img id="output" src="" />
+                                <img id="output" height="30" width="50" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Logo Image</label>
                                 <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($setting->image)}}" width="80">

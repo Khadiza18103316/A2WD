@@ -10,9 +10,8 @@
 <p>Addrss:{{$setting->address}} </p>
 <p>Mobile Number:{{ $setting->mbl_num }}</p>
 <p>Alternative Number:{{ $setting->alt_num}}</p>
-<p>Link:{{ $setting->link }}</p>
+<p>Link:{{ $setting->fb_link }}</p>
 <p>Footer Text:{{ $setting->footer_text }}</p>
 <p>Location:{{ $setting->location }}</p>
 <p>Email:{{ $setting->email }}</p>
-
 @endsection

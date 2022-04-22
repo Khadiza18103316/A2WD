@@ -17,7 +17,7 @@
         <div class="card shadow position-relative">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Teammates Informations</h6>
-            </div> 
+            </div>
             <div class="card-body">
 
                 <form action="{{ route('team.update', $team->id) }}" method="POST" enctype="multipart/form-data">
@@ -54,12 +54,12 @@
 
                             </div>
                         </div>
-                       
+
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <img id="output" src="" />
+                                <img id="output" height="30" width="50" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
-                                <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
+                                <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                                 <img src="{{ Storage::url($team->image)}}" width="80">
                             </div>
                         </div>

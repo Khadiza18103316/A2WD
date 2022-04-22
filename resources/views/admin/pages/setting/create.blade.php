@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-12">
-    <h3 class="mb-4">Add</h3>
+    <h3 class="mb-4">Add Setting</h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>
@@ -56,7 +56,7 @@
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Link</label>
-                                <input required name="link" type="link"  class="form-control">
+                                <input required name="fb_link" type="link"  class="form-control">
 
                             </div>
                         </div>
@@ -89,7 +89,7 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <img id="output" src="" />
+                                <img id="output" height="30" width="50" src="" />
                                 <label for="exampleInputEmail1" class="form-label">Logo Image</label>
                                 <input required name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
                             </div>

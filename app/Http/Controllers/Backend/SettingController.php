@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:web');
+    // }
+
     public function index(){
         $settings =Setting::paginate(5);
         return view ('admin.pages.setting.index',compact('settings'));
@@ -22,14 +27,13 @@ class SettingController extends Controller
         $request->validate([
             'logo_text'=>'required',
             'address'=>'required',
-            'image'=>'required',
             'mbl_num'=>'required',
             'alt_num'=>'required',
-            'link'=>'required',
+            'fb_link'=>'required',
             'footer_text'=>'required',
             'location'=>'required',
             'email'=>'required',
-
+            'image'=>'required|',
         ]);
 
         $path = $request->image->store('public/setting');
@@ -39,7 +43,7 @@ class SettingController extends Controller
             'address' =>$request->address,
             'mbl_num' =>$request->mbl_num,
             'alt_num' =>$request->alt_num,
-            'link' =>$request->link,
+            'fb_link' =>$request->fb_link,
             'footer_text' =>$request->footer_text,
             'location' =>$request->location,
             'email' =>$request->email,
@@ -64,18 +68,6 @@ class SettingController extends Controller
 
     public function update(Request $request,$id){
 
-        $request->validate([
-            'address'=>'required',
-            'image'=>'required',
-            'mbl_num'=>'required',
-            'alt_num'=>'required',
-            'link'=>'required',
-            'footer_text'=>'required',
-            'location'=>'required',
-            'email'=>'required',
-
-        ]);
-
         $setting = Setting::find($id);
 
         if($request->has('image')){
@@ -90,7 +82,7 @@ class SettingController extends Controller
                 'address' =>$request->address,
                 'mbl_num' =>$request->mbl_num,
                 'alt_num' =>$request->alt_num,
-                'link' =>$request->link,
+                'fb_link' =>$request->fb_link,
                 'footer_text' =>$request->footer_text,
                 'location' =>$request->location,
                 'email' =>$request->email,
@@ -103,6 +95,6 @@ class SettingController extends Controller
     public function delete($id)
     {
       Setting::find($id)->delete();
-      return redirect()->route('setting.index')->with('msg','Deleted.');
+      return redirect()->route('setting.index')->with('msg','Deleted Successfully!');
     }
 }

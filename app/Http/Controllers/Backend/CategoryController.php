@@ -18,25 +18,19 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $request->validate([
             'name'=>'required',
-            'image'=>'required',
+            'image'=>'required|',
         ]);
-        
+
         $path = $request->image->store('public/category');
         Category::create([
             // field name for DB || field name for form
             'name' =>$request->name,
             'image' =>$path,
         ]);
-        return redirect()->route('category.index')->with('success', 'Created Successfully!');
-    }
-
-    public function details($id)
-    {
-      $category=Category::find($id);
-      return view ('admin.pages.category.details',compact('category'));
+        return redirect()->route('category.index')->with('success', 'Category Created Successfully!');
     }
 
     public function edit($id)
@@ -48,8 +42,8 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request,$id){
-        
-        $category = Category::find($id); 
+
+        $category = Category::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/category');
@@ -62,7 +56,7 @@ class CategoryController extends Controller
                 'name' =>$request->name,
                 'image' =>$path,
             ]);
-            return redirect()->route('category.index')->with('message', 'Updated Successfully!');
+            return redirect()->route('category.index')->with('message', 'Category Updated Successfully!');
         }
     }
 
@@ -75,7 +69,7 @@ class CategoryController extends Controller
       $category->deleted = 'yes';
       $category->status = 'Inactive';
       $category->save();
-      
-     return redirect()->route('category.index')->with('msg','Deleted.');
+
+     return redirect()->route('category.index')->with('msg','Category Deleted Successfully!');
     }
 }

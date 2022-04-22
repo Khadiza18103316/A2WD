@@ -6,7 +6,7 @@
 
     @foreach ($homes as $home)
     <div>
-      <img src="{{ Storage::url($home->image)}}" height="900px" width="1370px">
+      <img src="{{ Storage::url($home->image)}}"  width="100%">
     </div>
     @endforeach
 

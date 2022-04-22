@@ -18,7 +18,9 @@ use App\Http\Controllers\Frontend\FrontendController;
 // Email
 use App\Http\Controllers\Email\EmailController;
 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Frontend Start
 Route::get('/',[FrontendController::class,'home'])->name('frontend.home');
@@ -33,12 +35,11 @@ Route::get ('/search',[FrontendController::class,'search'])->name('search');
 
 
 // Admin Start
-Route::group(['prefix'=>'admin'],function(){
-Route::get('/admin', function () {
-    return view('admin.pages.dashboard.dash');
-})->name('admin.dashboard');
 
-});
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
+Route::get('/admin', function () {
+return view('admin.pages.dashboard.dash');
+})->name('admin.dashboard');
 
 // Dashboard
 Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
@@ -48,7 +49,6 @@ Route::get ('/dashboard',[DashboardController::class,'dashboard'])->name('admin.
 Route::get ('/home/index',[HomeController::class,'index'])->name('home.index');
 Route::get ('/home/create',[HomeController::class,'create'])->name('home.create');
 Route::post('/home/store',[HomeController::class,'store'])->name('home.store');
-Route::get ('/home/details/{id}',[HomeController::class,'details'])->name('home.details');
 Route::get ('/home/edit/{id}',[HomeController::class,'edit'])->name('home.edit');
 Route::put ('/home/update/{id}',[HomeController::class,'update'])->name('home.update');
 Route::get ('/home/delete/{id}',[HomeController::class,'delete'])->name('home.delete');
@@ -57,7 +57,6 @@ Route::get ('/home/delete/{id}',[HomeController::class,'delete'])->name('home.de
 Route::get ('/gallery/index',[GalleryController::class,'index'])->name('gallery.index');
 Route::get ('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
 Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
-Route::get ('/gallery/details/{id}',[GalleryController::class,'details'])->name('gallery.details');
 Route::get ('/gallery/edit/{id}',[GalleryController::class,'edit'])->name('gallery.edit');
 Route::put ('/gallery/update/{id}',[GalleryController::class,'update'])->name('gallery.update');
 Route::get ('/gallery/delete/{id}',[GalleryController::class,'delete'])->name('gallery.delete');
@@ -75,7 +74,6 @@ Route::get ('/team/delete/{id}',[TeammatesController::class,'delete'])->name('te
 Route::get ('/category/index',[CategoryController::class,'index'])->name('category.index');
 Route::get ('/category/create',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
-Route::get ('/category/details/{id}',[CategoryController::class,'details'])->name('category.details');
 Route::get ('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::put ('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
 Route::get ('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
@@ -93,7 +91,6 @@ Route::get ('/setting/delete/{id}',[SettingController::class,'delete'])->name('s
 Route::get ('/about/index',[AboutController::class,'index'])->name('about.index');
 Route::get ('/about/create',[AboutController::class,'create'])->name('about.create');
 Route::post('/about/store',[AboutController::class,'store'])->name('about.store');
-Route::get ('/about/details/{id}',[AboutController::class,'details'])->name('about.details');
 Route::get ('/about/edit/{id}',[AboutController::class,'edit'])->name('about.edit');
 Route::put ('/about/update/{id}',[AboutController::class,'update'])->name('about.update');
 Route::get ('/about/delete/{id}',[AboutController::class,'delete'])->name('about.delete');
@@ -101,7 +98,4 @@ Route::get ('/about/delete/{id}',[AboutController::class,'delete'])->name('about
 // Email
 Route::post('/about/send',[EmailController::class,'send'])->name('send.email');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

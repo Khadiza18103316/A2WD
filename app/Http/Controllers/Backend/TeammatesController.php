@@ -18,15 +18,15 @@ class TeammatesController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $request->validate([
             'name'=>'required',
             'member_id'=>'required|numeric',
             'phone'=>'required|numeric',
             'designation'=>'required',
-            'image'=>'required',
+            'image'=>'required|',
         ]);
-        
+
         $path = $request->image->store('public/team');
         Team::create([
             // field name for DB || field name for form
@@ -55,7 +55,7 @@ class TeammatesController extends Controller
 
     public function update(Request $request,$id){
 
-        $team = Team::find($id); 
+        $team = Team::find($id);
 
         if($request->has('image')){
             $path = $request->image->store('public/team');
@@ -78,6 +78,6 @@ class TeammatesController extends Controller
     public function delete($id)
     {
       Team::find($id)->delete();
-      return redirect()->route('team.index')->with('msg','Deleted.');
+      return redirect()->route('team.index')->with('msg','Deleted Successfully!');
     }
 }
