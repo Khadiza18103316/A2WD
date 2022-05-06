@@ -26,6 +26,7 @@ class SettingController extends Controller
 
         $request->validate([
             'logo_text'=>'required',
+            'banner_text'=>'required',
             'address'=>'required',
             'mbl_num'=>'required',
             'alt_num'=>'required',
@@ -33,6 +34,7 @@ class SettingController extends Controller
             'footer_text'=>'required',
             'location'=>'required',
             'email'=>'required',
+            'footer_num'=>'required',
             'image'=>'required|',
         ]);
 
@@ -40,6 +42,7 @@ class SettingController extends Controller
         setting::create([
             // field name for DB || field name for form
             'logo_text' =>$request->logo_text,
+            'banner_text'=>$request->banner_text,
             'address' =>$request->address,
             'mbl_num' =>$request->mbl_num,
             'alt_num' =>$request->alt_num,
@@ -47,6 +50,7 @@ class SettingController extends Controller
             'footer_text' =>$request->footer_text,
             'location' =>$request->location,
             'email' =>$request->email,
+            'footer_num'=>$request->footer_num,
             'image' =>$path,
         ]);
         return redirect()->route('setting.index')->with('success', 'Created Successfully!');
@@ -79,6 +83,7 @@ class SettingController extends Controller
         if ($setting) {
             $setting->update([
                 'logo_text' =>$request->logo_text,
+                'banner_text'=>$request->banner_text,
                 'address' =>$request->address,
                 'mbl_num' =>$request->mbl_num,
                 'alt_num' =>$request->alt_num,
@@ -86,6 +91,7 @@ class SettingController extends Controller
                 'footer_text' =>$request->footer_text,
                 'location' =>$request->location,
                 'email' =>$request->email,
+                'footer_num'=>$request->footer_num,
                 'image' =>$path,
             ]);
             return redirect()->route('setting.index')->with('message', 'Updated Successfully!');

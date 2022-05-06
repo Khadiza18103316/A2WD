@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('logo_text');
+            $table->string('banner_text');
             $table->string('address');
             $table->string('mbl_num');
             $table->string('alt_num');
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('footer_text');
             $table->string('location');
             $table->string('email');
+            $table->string('footer_num');
             $table->timestamps();
         });
     }

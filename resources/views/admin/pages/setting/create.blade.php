@@ -33,6 +33,13 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Banner Text</label>
+                                <input required name="banner_text" type="text" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Address</label>
                                 <input required name="address" type="text" class="form-control">
                             </div>
@@ -55,7 +62,7 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Link</label>
+                                <label for="exampleInputEmail1" class="form-label">FB Link</label>
                                 <input required name="fb_link" type="link"  class="form-control">
 
                             </div>
@@ -84,6 +91,13 @@
                                 <label for="exampleInputEmail1" class="form-label">Email</label>
                                 <input required name="email" type="text"  class="form-control">
 
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Footer Number</label>
+                                <input required name="footer_num" type="text" class="form-control">
                             </div>
                         </div>
 

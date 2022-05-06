@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $homes =Home::paginate(5);
+        $homes =Home::latest()->paginate(5);
         return view ('admin.pages.home.index',compact('homes'));
     }
 

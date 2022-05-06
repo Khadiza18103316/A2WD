@@ -50,7 +50,7 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                        <i class="iconly-boldAdd-User"></i>
+                                <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">User</h6>
@@ -65,7 +65,7 @@
                         <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
-                                        <i class="iconly-boldAdd-User"></i>
+                                  <i class="fa-solid fa-users"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Teammate</h6>

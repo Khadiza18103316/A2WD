@@ -48,6 +48,6 @@
             @endforeach
         </tbody>
     </table>
-    {{-- {{ $teams->links() }} --}}
+    {{ $teams->links() }}
 
 @endsection

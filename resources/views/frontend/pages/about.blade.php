@@ -17,7 +17,7 @@
 
 	</head>
 	<body>
-      
+
       <!-- navbar start here -->
 			<nav class="fixed-top ftco-navbar-light ftco_navbar navbar navbar-expand-lg">
 		    <div class="container">
@@ -69,8 +69,6 @@
       <div class="aboutInfo">
          <h2>We are ...</h2>
          <p class="text-muted">{{ $about->description }}</p>
-         {{-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p> --}}
       </div>
       @endforeach
 
@@ -90,15 +88,15 @@
     <div class="col-lg-5 col-xs-12 about-company pb-4">
       <h2>DIGITAL</h2>
       <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
-   
+
     </div>
     <div class="col-lg-3 col-xs-12 links pb-4">
       <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>
         <ul class="m-0 p-0">
           <li>- <a href="{{route('frontend.home')}}">Home</a></li>
           <li>- <a href="{{route('frontend.about')}}">About</a></li>
-          <li>- <a href=".{{route('frontend.gallery')}}">Gallery</a></li>
-          <li>- <a href=".{{route('frontend.team')}}">Team mates</a></li>
+          <li>- <a href="{{route('frontend.gallery')}}">Gallery</a></li>
+          <li>- <a href="{{route('frontend.team')}}">Team mates</a></li>
           <li>- <a href="#contact">Contact</a></li>
         </ul>
     </div>

@@ -19,9 +19,11 @@
         </svg></i>
 
     <!-- Title Bar -->
+    @foreach($settings as $setting)
     <span class="titleBar">
-        <h1>{{ $home->name }}</h1>
+        <h1>{{ $setting->banner_text }}</h1>
     </span>
+    @endforeach
 </div>
 
 

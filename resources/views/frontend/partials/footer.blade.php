@@ -21,7 +21,7 @@
         <div class="col-lg-4 col-xs-12 location pb-4 ">
           <h4 class="mt-lg-0 mt-sm-4 text-white">Location</h4>
           <p>{{ $setting->location}}</p>
-          <p class="mb-0"><i class="fa fa-phone mr-3"></i>{{$setting->mbl_num}}</p>
+          <p class="mb-0"><i class="fa fa-phone mr-3"></i>{{$setting->footer_num}}</p>
           <p><i class="fa fa-envelope-o mr-3"></i>{{ $setting->email }}</p>
         </div>
         @endforeach
