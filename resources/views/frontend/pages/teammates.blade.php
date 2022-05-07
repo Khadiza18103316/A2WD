@@ -70,8 +70,9 @@
 </form>
 </div>
 
-           @foreach ($teams as $team)
+
             <div class="teammates d-flex flex-column gap-4 teammates">
+                @foreach ($teams as $team)
                <div class="card">
                   <div class="row">
                      <div class="col-md-3">
@@ -97,8 +98,8 @@
                      </div>
                   </div>
                </div>
+               @endforeach
             </div>
-            @endforeach
          </div>
       </div>
    </div>
@@ -112,7 +113,7 @@
     <div class="col-lg-5 col-xs-12 about-company pb-4">
       <h2>DIGITAL</h2>
       <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
-   
+
     </div>
     <div class="col-lg-3 col-xs-12 links pb-4">
       <h4 class="mt-lg-0 mt-sm-3 text-white">Useful Links</h4>

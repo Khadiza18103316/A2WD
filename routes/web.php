@@ -82,7 +82,6 @@ Route::get ('/category/delete/{id}',[CategoryController::class,'delete'])->name(
 Route::get ('/setting/index',[SettingController::class,'index'])->name('setting.index');
 Route::get ('/setting/create',[SettingController::class,'create'])->name('setting.create');
 Route::post('/setting/store',[SettingController::class,'store'])->name('setting.store');
-Route::get ('/setting/details/{id}',[SettingController::class,'details'])->name('setting.details');
 Route::get ('/setting/edit/{id}',[SettingController::class,'edit'])->name('setting.edit');
 Route::put ('/setting/update/{id}',[SettingController::class,'update'])->name('setting.update');
 Route::get ('/setting/delete/{id}',[SettingController::class,'delete'])->name('setting.delete');

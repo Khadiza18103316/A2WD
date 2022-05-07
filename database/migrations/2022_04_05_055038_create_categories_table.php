@@ -16,11 +16,10 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->enum('deleted',['yes','no'])->default('no');
+            $table->enum('deleted', ['yes', 'no'])->default('no');
             $table->bigInteger('deleted_by')->nullable();
             $table->bigInteger('created_by')->nullable();
-            $table->enum('status',['Active','Inactive'])->default('Active');
+            $table->enum('status', ['Active', 'Inactive'])->default('Active');
             $table->bigInteger('updated_by')->nullable();
             $table->timestamps();
         });

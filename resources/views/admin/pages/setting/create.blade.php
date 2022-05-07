@@ -33,13 +33,6 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Banner Text</label>
-                                <input required name="banner_text" type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Address</label>
                                 <input required name="address" type="text" class="form-control">
                             </div>

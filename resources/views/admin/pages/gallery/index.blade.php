@@ -21,11 +21,10 @@
     <table class="table table-striped table-bordered table-hover" width= "100%">
         <thead>
             <tr>
-                <th width="20%" scope="col">#</th>
+                <th width="5%" scope="col">#</th>
                 <th width="20%" scope="col">Image</th>
-                <th width="20%" scope="col">Name</th>
-                <th width="20%" scope="col">Category</th>
-                <th width="20%" scope="col">Action</th>
+                <th width="35%" scope="col">Category</th>
+                <th width="15%" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +32,6 @@
                 <tr>
                     <th>{{ $key + 1 }}</th>
                     <td><img src="{{ Storage::url($gallery->image)}}" width="80"></td>
-                    <td>{{ $gallery->name }}</td>
                     <td>{{ $gallery->category->name }}</td>
                     <td>
                         <a class="btn btn-info btn-sm" href="{{ route('gallery.edit', $gallery->id) }}">Edit</a>
@@ -43,4 +41,5 @@
             @endforeach
         </tbody>
     </table>
+    {{ $galleries->links() }}
 @endsection

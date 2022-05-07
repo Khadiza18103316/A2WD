@@ -26,7 +26,6 @@ class SettingController extends Controller
 
         $request->validate([
             'logo_text'=>'required',
-            'banner_text'=>'required',
             'address'=>'required',
             'mbl_num'=>'required',
             'alt_num'=>'required',
@@ -42,7 +41,6 @@ class SettingController extends Controller
         setting::create([
             // field name for DB || field name for form
             'logo_text' =>$request->logo_text,
-            'banner_text'=>$request->banner_text,
             'address' =>$request->address,
             'mbl_num' =>$request->mbl_num,
             'alt_num' =>$request->alt_num,
@@ -83,7 +81,6 @@ class SettingController extends Controller
         if ($setting) {
             $setting->update([
                 'logo_text' =>$request->logo_text,
-                'banner_text'=>$request->banner_text,
                 'address' =>$request->address,
                 'mbl_num' =>$request->mbl_num,
                 'alt_num' =>$request->alt_num,

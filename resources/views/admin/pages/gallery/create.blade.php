@@ -23,13 +23,6 @@
                 <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Image Name</label>
-                                <input required name="name" type="text" placeholder="Name" class="form-control">
-
-                            </div>
-                        </div>
 
                         <div class="col-lg-6">
                             <div class="mb-3">

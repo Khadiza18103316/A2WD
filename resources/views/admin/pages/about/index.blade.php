@@ -22,9 +22,9 @@
         <thead>
             <tr>
                 <th width="5%" scope="col">#</th>
-                <th width="20%" scope="col">Image</th>
+                <th width="25%" scope="col">Image</th>
                 <th width="50%" scope="col">Description</th>
-                <th width="25%" scope="col">Action</th>
+                <th width="20%" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -34,8 +34,8 @@
                     <td><img src="{{ Storage::url($about->image)}}" width="80"></td>
                     <td>{{ $about->description }}</td>
                     <td>
-                        <a class="btn btn-info btn-sm" href="{{ route('about.edit', $about->id) }}">Edit</a><br>
-                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('about.delete', $about->id) }}">Delete</a><br>
+                        <a class="btn btn-info btn-sm" href="{{ route('about.edit', $about->id) }}">Edit</a> <br>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete?')" href="{{ route('about.delete', $about->id) }}">Delete</a>
                     </td>
                 </tr>
             @endforeach

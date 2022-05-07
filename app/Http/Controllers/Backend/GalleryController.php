@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function index(){
-        $galleries =Gallery::with('category')->get();
+        $galleries =Gallery::with('category')->latest()->paginate(5);
         return view ('admin.pages.gallery.index', compact('galleries'));
     }
 
@@ -22,7 +22,6 @@ class GalleryController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'name'=>'required',
             'category'=>'required',
             'image'=>'required|',
         ]);
@@ -30,7 +29,6 @@ class GalleryController extends Controller
         $path = $request->image->store('public/gallery');
         Gallery::create([
             // field name for DB || field name for form
-            'name' =>$request->name,
             'category_id' =>$request->category,
             'image' =>$path,
         ]);
@@ -58,7 +56,6 @@ class GalleryController extends Controller
 
         if ($gallery) {
             $gallery->update([
-                'name' =>$request->name,
                 'category_id' =>$request->category,
                 'image' =>$path,
             ]);

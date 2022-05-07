@@ -21,14 +21,11 @@ class CategoryController extends Controller
 
         $request->validate([
             'name'=>'required',
-            'image'=>'required|',
         ]);
 
-        $path = $request->image->store('public/category');
         Category::create([
             // field name for DB || field name for form
             'name' =>$request->name,
-            'image' =>$path,
         ]);
         return redirect()->route('category.index')->with('success', 'Category Created Successfully!');
     }
@@ -45,16 +42,9 @@ class CategoryController extends Controller
 
         $category = Category::find($id);
 
-        if($request->has('image')){
-            $path = $request->image->store('public/category');
-        }else{
-            $path = $category->image;
-        }
-
         if ($category) {
             $category->update([
                 'name' =>$request->name,
-                'image' =>$path,
             ]);
             return redirect()->route('category.index')->with('message', 'Category Updated Successfully!');
         }
@@ -63,7 +53,7 @@ class CategoryController extends Controller
     public function delete($id)
     {
       $category=Category::find($id);
-      $category->name = $category->image. 'deleted' .$id;
+      $category->name. 'deleted' .$id;
       $user = Auth::id();
       $category->deleted_by = $user;
       $category->deleted = 'yes';

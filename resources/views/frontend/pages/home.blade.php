@@ -19,11 +19,9 @@
         </svg></i>
 
     <!-- Title Bar -->
-    @foreach($settings as $setting)
     <span class="titleBar">
-        <h1>{{ $setting->banner_text }}</h1>
+        <h1>{{ $home->name}}</h1>
     </span>
-    @endforeach
 </div>
 
 
@@ -58,7 +56,7 @@
 	</div>
 	<div class="container">
 		<div class="justify-content-center row">
-      @foreach ($teams as $team)
+             @foreach ($teams as $team)
 			<div class="col-6 p-3 col-lg-2 col-md-5 col-sm-6 p-md-3 p-sm-3">
 				<div class="bg-transparent border-0 card m-auto overflow-hidden rounded-circle teamMember">
 					<div class="w-100 h-100">
@@ -70,11 +68,12 @@
 					</div>
 				</div>
 			</div>
-      @endforeach
+            @endforeach
 		</div>
 		<div>
 			<p class="text-muted text-end moveTo"><a href="{{route('frontend.team')}}">See more</a></p>
 	  </div>
+
 	</div>
 </div>
 

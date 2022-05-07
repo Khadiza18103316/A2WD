@@ -22,16 +22,14 @@
         <thead>
             <tr>
                 <th width="5%" scope="col">#</th>
-                <th width="40%" scope="col">Image</th>
-                <th width="30%" scope="col">Name</th>
-                <th width="25%" scope="col">Action</th>
+                <th width="50%" scope="col">Name</th>
+                <th width="10%" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($categories as $key => $category)
                 <tr>
                     <th>{{ $key + 1 }}</th>
-                    <td><img src="{{ Storage::url($category->image)}}" width="80"></td>
                     <td>{{ $category->name }}</td>
                     <td>
                         <a class="btn btn-info btn-sm" href="{{ route('category.edit', $category->id) }}">Edit</a>

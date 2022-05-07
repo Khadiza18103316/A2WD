@@ -21,13 +21,13 @@
     <table class="table table-striped table-bordered table-hover" width= "100%">
         <thead>
             <tr>
-                <th width= "5%" scope="col">#</th>
+                <th width= "4%" scope="col">#</th>
                 <th width= "10%" scope="col">Image</th>
-                <th width= "15%" scope="col">Name</th>
+                <th width= "13%" scope="col">Name</th>
                 <th width= "10%" scope="col">ID</th>
-                <th width= "10%" scope="col">Phone</th>
-                <th width= "25%" scope="col">Designation</th>
-                <th width= "25%" scope="col">Action</th>
+                <th width= "13%" scope="col">Phone</th>
+                <th width= "13%" scope="col">Designation</th>
+                <th width= "21%" scope="col">Action</th>
             </tr>
         </thead>
         <tbody>

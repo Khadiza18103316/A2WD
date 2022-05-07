@@ -30,7 +30,7 @@ class HomeController extends Controller
             'name' =>$request->name,
             'image' =>$path,
         ]);
-        return redirect()->route('home.index')->with('success', 'Created Successfully!');
+        return redirect()->route('home.index')->with('success', 'Banner Created Successfully!');
     }
 
     public function edit($id)
@@ -56,13 +56,13 @@ class HomeController extends Controller
                 'name' =>$request->name,
                 'image' =>$path,
             ]);
-            return redirect()->route('home.index')->with('message', 'Updated Successfully!');
+            return redirect()->route('home.index')->with('message', 'Banner Updated Successfully!');
         }
     }
 
     public function delete($id)
     {
       Home::find($id)->delete();
-      return redirect()->route('home.index')->with('msg','Deleted Successfully!');
+      return redirect()->route('home.index')->with('msg','Banner Deleted Successfully!');
     }
 }

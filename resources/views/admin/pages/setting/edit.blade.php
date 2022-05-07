@@ -33,13 +33,6 @@
 
                         <div class="col-lg-6">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Banner Text</label>
-                                <input value="{{ $setting->banner_text }}" name="banner_text" type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Address</label>
                                 <input value="{{ $setting->address }}"  name="address" type="text" class="form-control">
                             </div>

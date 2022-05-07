@@ -3,7 +3,7 @@
 
 <h3> Details </h3>
 
-<p>                        
+<p>
     <td><img src="{{ Storage::url($team->image)}}" width="80"></td>
 </p>
 <p>Name:{{$team->name}} </p>

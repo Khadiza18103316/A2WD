@@ -31,15 +31,7 @@
 
                             </div>
                         </div>
-                        
-                        <div class="col-lg-6">
-                            <div class="mb-3">
-                                <img id="output" src="" />
-                                <label for="exampleInputEmail1" class="form-label">Image</label>
-                                <input  name="image" type="file" id="image" class="form-control" onchange="loadFile(event)">
-                                <img src="{{ Storage::url($category->image)}}" width="80">
-                            </div>
-                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary btn-icon-split">
                         <span class="icon text-white-50">
